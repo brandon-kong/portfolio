@@ -5,9 +5,10 @@ import { StaticImage } from "gatsby-plugin-image"
     
 
 const Container = styled.nav`
-    width: 100%;
     min-height: 80px;
-
+    min-width: 200px;
+    width: 100%;
+    background-color: #000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,6 +17,10 @@ const Container = styled.nav`
 const ListMenu = styled.ul`
     list-style-type: none;
     text-align: center;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const ListItem = styled.li`
@@ -52,7 +57,7 @@ const ImageStyle = {
 
 const StyledLink = styled(Link)`
     text-decoration: none;
-    color: ${props => props.isDark && "white" || "black"};
+    color: ${props => (props.isDark && "white") || ("black")};
 
 `
 //#0551a5 color palette

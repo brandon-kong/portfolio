@@ -14,6 +14,8 @@ const pageStyles = {
   padding: 0,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   backgroundColor: "#000000",
+  width: '100%',
+
 }
 
 const Container = styled.div`
@@ -31,11 +33,12 @@ const IndexPage = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <main style={pageStyles}>
+    <main style={pageStyles} className="outer-container">
       <Helmet htmlAttributes={{lang: 'en',}}/>
       <title>Home Page</title>
-      <Navbar isDark={true} toggle={toggle}/>
+      
       <Container>
+      <Navbar isDark={true} toggle={toggle}/>
         <Landing>
         
         </Landing>
