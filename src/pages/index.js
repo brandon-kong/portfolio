@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import Navbar from "../components/Navbar"
 import {Helmet} from "react-helmet"
 import styled from "styled-components"
@@ -25,11 +25,16 @@ const Container = styled.div`
 
 // markup
 const IndexPage = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <main style={pageStyles}>
       <Helmet htmlAttributes={{lang: 'en',}}/>
       <title>Home Page</title>
-      <Navbar isDark={true}/>
+      <Navbar isDark={true} toggle={toggle}/>
       <Container>
         <Landing>
         
