@@ -5,7 +5,10 @@ import styled from "styled-components"
 const Container = styled.section`
     background-color: white;
     padding-top: 3rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
+
+    padding-left: 3em;
+    padding-right: 3em;
 `
 
 const ItemContainer = styled.div`
@@ -52,7 +55,7 @@ const ListDiv = styled.div`
 `
 
 const ListNumber = styled.h1`
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 8rem;
     font-weight: 700;
     color: #000;

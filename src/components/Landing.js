@@ -26,8 +26,9 @@ const LandingDiv = styled.div`
     align-content: center;
     align-items: center;
     justify-items: start;
-    padding-left: 40px;
-    padding-right: 40px;
+    
+    padding-left: 3em;
+    padding-right: 3em;
 
     padding-top: 100px;
 

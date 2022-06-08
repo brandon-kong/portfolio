@@ -10,6 +10,9 @@ import Sections from "../components/Sections"
 import StickySection from "../components/StickySection"
 import Slideshow from "../components/QuoteSection"
 
+import FadeInSection from "../components/FadeSection"
+
+
 import "../css/root.css"
 import "../css/landing.css"
 
@@ -47,8 +50,9 @@ const IndexPage = () => {
             <Landing/>
             <Sections/>
             <StickySection/>
-            <Slideshow/>
-            
+            <FadeInSection>
+              <Slideshow/>
+            </FadeInSection>
       </Container>
 
       
