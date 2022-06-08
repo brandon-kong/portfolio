@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 
 
 import B from "../images/hero-image.svg"
@@ -26,7 +27,7 @@ const LandingDiv = styled.div`
     align-content: center;
     align-items: center;
     justify-items: start;
-    
+
     padding-left: 3em;
     padding-right: 3em;
 
@@ -121,6 +122,15 @@ const StyledLinkedin = styled(FaLinkedin)`
     }
 `
 
+const StyledFacebook = styled(FaFacebook)`
+    color: white;
+    transition: color 250ms;
+
+    &:hover {
+        color: rgb(255, 244, 194);
+    }
+`
+
 const Button = styled(Link)`
 
     display: flex;
@@ -193,6 +203,14 @@ function LinkedinOverlay(props){
     )
 }
 
+function FacebookOverlay(props){
+    return (
+        <a href={props.to}>
+            <StyledFacebook fontSize="2rem"/>
+        </a>
+    )
+}
+
 const ImgStyles = {
     overflow: 'hidden',
     width: 'auto',
@@ -237,6 +255,9 @@ function Landing(props) {
                         </LineItem>
                         <LineItem>
                             <LinkedinOverlay to="https://www.linkedin.com/in/brandon-kong0/"/>
+                        </LineItem>
+                        <LineItem>
+                            <FacebookOverlay to="https://www.linkedin.com/in/brandon-kong0/"/>
                         </LineItem>
                     </Overlays>
                     

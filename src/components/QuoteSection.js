@@ -4,11 +4,12 @@ import { Carousel } from 'react-responsive-carousel';
 import styled from "styled-components"
 
 const Container = styled.section`
-  width: 70%;
+  width: 90%;
   margin: auto;
   display: flex;
   min-height: 400px;
   
+  flex-direction: column; 
 
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -19,6 +20,8 @@ const Container = styled.section`
 `
 
 const ItemContainer = styled.div`
+  width: 70%;
+  margin: auto;
 `
 
 const QuoteText = styled.p`
@@ -38,7 +41,7 @@ const QuoteText = styled.p`
     content: open-quote;
     font-family: serif;
     position: relative;
-    left: -5px;
+    left: -1rem;
     height: 0;
   }
 
@@ -49,9 +52,10 @@ const QuoteText = styled.p`
     content: close-quote;
     font-family: serif;
     position: relative;
-    right: -10px;
+    right: -1rem;
     height: 0;
   }
+
 
   `
 
@@ -74,6 +78,17 @@ const QuoteContainer = styled.div`
   padding-top: 1em;
   padding-bottom: 1em;
 `
+
+const HeadingTitle = styled.h1`
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 7rem;
+`
+
 function QuoteBlock(props){
   return (
     <QuoteContainer>
@@ -84,11 +99,16 @@ function QuoteBlock(props){
   )
 }
 
+const InlineColor = styled.span`
+  color: #ffd104
+`
+
 function Slideshow() {
     return (
       <Container>
+        <HeadingTitle>What <InlineColor>employers</InlineColor> have to say about my <InlineColor>ability</InlineColor></HeadingTitle>
         <ItemContainer>
-        <Carousel showArrows={false} showStatus={false} autoPlay={true} infiniteLoop={true} showIndicators={false} dynamicHeight={true} stopOnHover={false} interval={10000} width="100%" axis="vertical">
+        <Carousel showArrows={false} showStatus={false} autoPlay={true} infiniteLoop={true} showIndicators={false} dynamicHeight={false} stopOnHover={false} interval={10000} width="100%" axis="vertical">
           <QuoteBlock role="Illustrator" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
           <QuoteBlock role="CEO of Microsoft" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
 

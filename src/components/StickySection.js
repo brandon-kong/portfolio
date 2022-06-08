@@ -1,6 +1,9 @@
 import React from "react"
+import { FadeIn } from "react-scroll-motion";
 import StickyBox from "react-sticky-box";
 import styled from "styled-components"
+
+import { TweenInSection, FadeInSection } from "./FadeSection"
 
 const Container = styled.section`
     background-color: white;
@@ -66,6 +69,7 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica N
     font-size: 3rem;
     font-weight: 500;
     color: #000;
+    padding-bottom: 1rem;
 `
 
 const ListDescription = styled.p`
@@ -79,12 +83,19 @@ const BreakPoint = styled.hr`
     border-top: 1px solid black;
 `
 
+//debating on whether or not i should keep the FadeInSection????!!!?!?!
 function NumberedList(props) {
     return (
         <ListDiv>
-            <ListNumber>{props.num}</ListNumber>
-            <ListTitle>Communication & trust are core principles</ListTitle>
-            <ListDescription>An integral part of our well-defined process are our workshops and meetings. You will take part of every step of the way and will always be well informed on the progress of your project.</ListDescription>
+            <FadeInSection>
+                <ListNumber>{props.num}</ListNumber>
+            </FadeInSection>
+            <FadeInSection>
+                <ListTitle>Communication & trust are core principles</ListTitle>
+            </FadeInSection>
+            <FadeInSection>
+                <ListDescription>An integral part of our well-defined process are our workshops and meetings. You will take part of every step of the way and will always be well informed on the progress of your project.</ListDescription>
+            </FadeInSection>
         </ListDiv>
     )
 }
@@ -104,15 +115,33 @@ function StickySection(props){
                     <StickyText>Why we should collaborate together to build success for your services</StickyText>
                 </StickyBox>
                     <RightSide>
-                        <BreakPoint/>
+                        <TweenInSection>
+                            <BreakPoint/>
+                        </TweenInSection>
+
                         <NumberedList num="01"/>
-                        <BreakPoint/>
+
+                        <TweenInSection>
+                            <BreakPoint/>
+                        </TweenInSection>
+
                         <NumberedList num="02"/>
-                        <BreakPoint/>
+
+                        <TweenInSection>
+                            <BreakPoint/>
+                        </TweenInSection>
+
                         <NumberedList num="03"/>
-                        <BreakPoint/>
+
+                        <TweenInSection>
+                            <BreakPoint/>
+                        </TweenInSection>
+
                         <NumberedList num="04"/>
-                        <BreakPoint/>
+
+                        <TweenInSection>
+                            <BreakPoint/>
+                        </TweenInSection>
                     </RightSide>
             </ItemContainer>
     </Container>

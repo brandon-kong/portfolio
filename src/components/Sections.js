@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import FadeInSection from "./FadeSection"
+import {FadeInSection} from "./FadeSection"
 
 const Container = styled.section`
     min-height: 300px;

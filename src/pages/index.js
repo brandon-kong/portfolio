@@ -10,7 +10,7 @@ import Sections from "../components/Sections"
 import StickySection from "../components/StickySection"
 import Slideshow from "../components/QuoteSection"
 
-import FadeInSection from "../components/FadeSection"
+import {FadeInSection} from "../components/FadeSection"
 
 
 import "../css/root.css"
@@ -53,6 +53,8 @@ const IndexPage = () => {
             <FadeInSection>
               <Slideshow/>
             </FadeInSection>
+            <Sections/>
+            <Landing/>
       </Container>
 
       
