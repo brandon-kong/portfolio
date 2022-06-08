@@ -8,6 +8,7 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Mo
 import Landing from "../components/Landing"
 import Sections from "../components/Sections"
 import StickySection from "../components/StickySection"
+import Slideshow from "../components/QuoteSection"
 
 import "../css/root.css"
 import "../css/landing.css"
@@ -46,7 +47,7 @@ const IndexPage = () => {
             <Landing/>
             <Sections/>
             <StickySection/>
-            <Sections/>
+            <Slideshow/>
             
       </Container>
 
