@@ -12,6 +12,7 @@ const Container = styled.nav`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
 `
 
 const ListMenu = styled.ul`
@@ -95,16 +96,25 @@ function Item(props){
     )
 }
 
+const CustomHeader = styled.header`
+    width: 100%;
+    display: ${props => (props.doesStick && "stick") || ("block")};
+    position: fixed;
+    top: 0;
+`
+
 function Navbar(props) {
     return (
-        <Container>
-            <HeaderLogo to="/" isDark={props.isDark}></HeaderLogo>
-            <ListMenu>
-                <Item to="/" isDark={props.isDark}>about me</Item>
-                <Item to="/" isDark={props.isDark}>portfolio</Item>
-                <Item to="/" isDark={props.isDark}>contact</Item>
-            </ListMenu>
-        </Container>
+        <CustomHeader doesStick={props.doesStick}>
+            <Container>
+                <HeaderLogo to="/" isDark={props.isDark}></HeaderLogo>
+                <ListMenu>
+                    <Item to="/" isDark={props.isDark}>about me</Item>
+                    <Item to="/" isDark={props.isDark}>portfolio</Item>
+                    <Item to="/" isDark={props.isDark}>contact</Item>
+                </ListMenu>
+            </Container>
+        </CustomHeader>
     )
 }
 

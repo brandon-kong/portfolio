@@ -4,6 +4,7 @@ import {Helmet} from "react-helmet"
 import styled from "styled-components"
 
 import Landing from "../components/Landing"
+import Sections from "../components/Sections"
 
 import "../css/root.css"
 import "../css/landing.css"
@@ -38,11 +39,12 @@ const IndexPage = () => {
       <title>Home Page</title>
       
       <Container>
-      <Navbar isDark={true} toggle={toggle}/>
-        <Landing>
+        <Navbar isDark={true} toggle={toggle} doesStick={true}/>
+        <Landing/>
+        <Sections/>
         
-        </Landing>
       </Container>
+
       
     </main>
   )

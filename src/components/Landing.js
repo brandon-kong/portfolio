@@ -1,20 +1,23 @@
 import React, { } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import FadeInSection from "./FadeSection"
+import { useInView } from "react-intersection-observer";
 
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 
-import B from "../images/hero-image.svg"
-  
 
+import B from "../images/hero-image.svg"
+
+const FadeWrapper = styled.div`
+`
+  
 const LandingDiv = styled.div`
     max-width: 1000px;
     margin: auto;
     min-height: 600px;
     background-color: #000;
-
-    padding-top: 3em;
 
     display: flex;
     flex-direction: row;
@@ -23,13 +26,16 @@ const LandingDiv = styled.div`
     align-content: center;
     align-items: center;
     justify-items: start;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    padding-top: 100px;
 
     @media (max-width: 768px) {
         flex-direction: column;
         justify-items: center;
         min-height: 600px;
+        padding-top: 120px;
     }
 
 `
@@ -85,8 +91,8 @@ const BottomText = styled.p`
 `
 
 const ImgDiv = styled.div`
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 `
 
 const PrimaryText = {
@@ -187,19 +193,35 @@ function LinkedinOverlay(props){
 }
 
 const ImgStyles = {
-    overflow: 'visible',
+    overflow: 'hidden',
     width: 'auto',
 }
+
+const CustomImg = styled(B)`
+    height: 400px;
+    width: 100%;
+    min-width: 300px;
+
+    @media (max-width: 768px) {
+        padding-top: 4rem;
+        height: 330px;
+    }
+`
 
 function ImgGrid(props) {
     return (
         <ImgDiv>
-            <B height={400} width={370} style={ImgStyles}/>
+            <CustomImg />
         </ImgDiv>
     )
 }
 
 function Landing(props) {
+    const { ref, inView } = useInView({
+        threshold: 0,
+        triggerOnce: true,
+      });
+
     return (
         <LandingDiv>
             <TextDiv>
@@ -219,6 +241,7 @@ function Landing(props) {
                     
                 </BottomOverlay>
             </TextDiv>
+
            
             <ImgGrid/>
             
