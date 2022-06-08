@@ -96,11 +96,15 @@ function Item(props){
     )
 }
 
-const CustomHeader = styled.header`
+/*const CustomHeader = styled.header`
     width: 100%;
     display: ${props => (props.doesStick && "stick") || ("block")};
     position: fixed;
     top: 0;
+`*/
+
+const CustomHeader = styled.header`
+
 `
 
 function Navbar(props) {

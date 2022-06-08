@@ -3,8 +3,11 @@ import Navbar from "../components/Navbar"
 import {Helmet} from "react-helmet"
 import styled from "styled-components"
 
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+
 import Landing from "../components/Landing"
 import Sections from "../components/Sections"
+import StickySection from "../components/StickySection"
 
 import "../css/root.css"
 import "../css/landing.css"
@@ -39,10 +42,13 @@ const IndexPage = () => {
       <title>Home Page</title>
       
       <Container>
-        <Navbar isDark={true} toggle={toggle} doesStick={true}/>
-        <Landing/>
-        <Sections/>
-        
+            <Navbar isDark={true} toggle={toggle} doesStick={true}/>
+            <Landing/>
+            <Sections/>
+            <StickySection/>
+            <Sections/>
+            <Sections/>
+            <Sections/>
       </Container>
 
       

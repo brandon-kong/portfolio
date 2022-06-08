@@ -96,7 +96,7 @@ function Sections(props) {
                     <InfoFrame stat="25M+" middle="players" end="reached across games" />
                 </FadeInSection>
                 <FadeInSection style={{transitionDelay: '100ms'}}>
-                    <InfoFrame stat="$+" middle="revenue" end="earned after getting hired" />
+                    <InfoFrame stat="6+" middle="years" end="of interdisciplinary development" />
                 </FadeInSection>
                 </FlexDivContainer>
             </Container>

@@ -28,6 +28,7 @@ const LandingDiv = styled.div`
     justify-items: start;
     padding-left: 40px;
     padding-right: 40px;
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 
     padding-top: 100px;
 
