@@ -38,8 +38,8 @@ const TextHolder = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     @media (max-width: 768px) {
         padding-bottom: 3rem;
@@ -51,7 +51,7 @@ const TextHolder = styled.div`
 const PrimaryText = styled.h1`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 800;
-    font-size: 75px;
+    font-size: 4rem;
     color: #ffd104;
     display: block;
     line-height: 5.5rem;
@@ -61,7 +61,7 @@ const PrimaryText = styled.h1`
 const LightText = styled.h2`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 650;
-    font-size: 30px;
+    font-size: 2rem;
     color: #fff;
     text-align: center;
     line-height: 2.3rem;
@@ -71,7 +71,7 @@ const SpanText = styled.span`
     color: #ffd104;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 650;
-    font-size: 30px;
+    font-size: 2rem;
     text-align: center;
     line-height: 2.3rem;
 `
@@ -93,7 +93,7 @@ function Sections(props) {
             <Container>
                 <FlexDivContainer>
                 <FadeInSection>
-                    <InfoFrame stat="25M+" middle="players" end="reached across games" />
+                    <InfoFrame stat="25M+" middle="players" end="reached across my games" />
                 </FadeInSection>
                 <FadeInSection style={{transitionDelay: '100ms'}}>
                     <InfoFrame stat="6+" middle="years" end="of interdisciplinary development" />

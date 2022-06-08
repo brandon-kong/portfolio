@@ -28,3 +28,17 @@ body {
     transform: none;
     visibility: visible;
   }
+
+  .sticky-mobile {
+      display: none;
+  }
+  
+@media only screen and (max-width: 768px){
+    .sticky {
+        display: none;
+    }
+
+    .sticky-mobile {
+        display: block;
+    }
+}

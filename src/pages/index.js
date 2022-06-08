@@ -47,8 +47,7 @@ const IndexPage = () => {
             <Sections/>
             <StickySection/>
             <Sections/>
-            <Sections/>
-            <Sections/>
+            
       </Container>
 
       
