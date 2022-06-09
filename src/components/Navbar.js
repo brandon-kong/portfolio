@@ -80,7 +80,7 @@ function HeaderLogo(props) {
     return (
         <LogoTitle>
             <Link to={props.to}>
-                <StaticImage className="unselectable" style={ImageStyle} src="../images/logo.png" alt="brandon kong brand text" height={35} placeholder="none"></StaticImage>
+                <StaticImage className="unselectable" style={ImageStyle} src="../images/logo-white.png" alt="brandon kong brand text" height={35} placeholder="none"></StaticImage>
             </Link>
         </LogoTitle>
     )

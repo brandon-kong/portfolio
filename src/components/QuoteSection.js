@@ -61,7 +61,7 @@ const QuoteText = styled.p`
 
 const QuoteAuthor = styled.h3`
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding-bottom: .5rem;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -108,7 +108,7 @@ function Slideshow() {
       <Container>
         <HeadingTitle>What <InlineColor>employers</InlineColor> have to say about my <InlineColor>ability</InlineColor></HeadingTitle>
         <ItemContainer>
-        <Carousel showArrows={false} showStatus={false} autoPlay={true} infiniteLoop={true} showIndicators={false} dynamicHeight={false} stopOnHover={false} interval={10000} width="100%" axis="vertical">
+        <Carousel showArrows={false} showStatus={false} showThumbs={false} autoPlay={true} infiniteLoop={true} showIndicators={false} dynamicHeight={false} stopOnHover={false} interval={10000} width="100%" axis="vertical">
           <QuoteBlock role="Illustrator" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
           <QuoteBlock role="CEO of Microsoft" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
 

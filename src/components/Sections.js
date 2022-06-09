@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {FadeInSection} from "./FadeSection"
 
-const Container = styled.section`
+export const SectionContainer = styled.section`
     min-height: 300px;
     background-color: #000;
 
@@ -18,7 +17,7 @@ const Container = styled.section`
     }
 `
 
-const FlexDivContainer = styled.div`
+export const FlexDivContainer = styled.div`
     display: flex;
     justify-content: center;
     width: 80%;
@@ -76,7 +75,7 @@ const SpanText = styled.span`
     line-height: 2.3rem;
 `
 
-function InfoFrame(props){
+export function InfoFrame(props){
     return (
         <TextHolder>
             <PrimaryText className="unselectable">{props.stat}</PrimaryText>
@@ -88,9 +87,10 @@ function InfoFrame(props){
     )
 }
 
-function Sections(props) {
-    return (
-            <Container>
+
+
+/*
+ <SectionContainer>
                 <FlexDivContainer>
                 <FadeInSection>
                     <InfoFrame stat="25M+" middle="players" end="reached across my games" />
@@ -99,8 +99,5 @@ function Sections(props) {
                     <InfoFrame stat="6+" middle="years" end="of interdisciplinary development" />
                 </FadeInSection>
                 </FlexDivContainer>
-            </Container>
-    )
-}
-
-export default Sections
+            </SectionContainer>
+            */

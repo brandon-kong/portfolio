@@ -3,11 +3,10 @@ import Navbar from "../components/Navbar"
 import {Helmet} from "react-helmet"
 import styled from "styled-components"
 
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
-
 import Landing from "../components/Landing"
-import Sections from "../components/Sections"
+import { SectionContainer, FlexDivContainer, InfoFrame } from "../components/Sections"
 import StickySection from "../components/StickySection"
+import Footer from "../components/Footer"
 import Slideshow from "../components/QuoteSection"
 
 import {FadeInSection} from "../components/FadeSection"
@@ -46,15 +45,28 @@ const IndexPage = () => {
       <title>Home Page</title>
       
       <Container>
-            <Navbar isDark={true} toggle={toggle} doesStick={true}/>
+            <Navbar isDark={true} toggle={toggle}></Navbar>
             <Landing/>
-            <Sections/>
+
+            <SectionContainer>
+                <FlexDivContainer>
+                  <FadeInSection>
+                      <InfoFrame stat="25M+" middle="players" end="reached across my games" />
+                  </FadeInSection>
+                  <FadeInSection style={{transitionDelay: '100ms'}}>
+                      <InfoFrame stat="6+" middle="years" end="of interdisciplinary development" />
+                  </FadeInSection>
+                </FlexDivContainer>
+            </SectionContainer>
+
+
             <StickySection/>
+
             <FadeInSection>
               <Slideshow/>
             </FadeInSection>
-            <Sections/>
-            <Landing/>
+
+            <Footer/>
       </Container>
 
       

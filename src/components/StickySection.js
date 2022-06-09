@@ -1,5 +1,4 @@
 import React from "react"
-import { FadeIn } from "react-scroll-motion";
 import StickyBox from "react-sticky-box";
 import styled from "styled-components"
 
@@ -100,16 +99,10 @@ function NumberedList(props) {
     )
 }
 
-const MobileStyle = {
-    '@media (max-width: 500px)': {
-        display: 'none',
-      },
-}
-
 function StickySection(props){
     return (
         <Container>
-            <ItemContainer style={MobileStyle}>
+            <ItemContainer>
                 <StickyText className="sticky-mobile">Why we should collaborate together to build success for your services</StickyText>
                 <StickyBox offsetTop={0} offsetBottom={0} className="sticky">
                     <StickyText>Why we should collaborate together to build success for your services</StickyText>

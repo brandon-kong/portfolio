@@ -1,8 +1,6 @@
 import React, { } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import FadeInSection from "./FadeSection"
-import { useInView } from "react-intersection-observer";
 
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
@@ -11,8 +9,6 @@ import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 
 import B from "../images/hero-image.svg"
 
-const FadeWrapper = styled.div`
-`
   
 const LandingDiv = styled.div`
     max-width: 1000px;
@@ -31,13 +27,13 @@ const LandingDiv = styled.div`
     padding-left: 3em;
     padding-right: 3em;
 
-    padding-top: 100px;
+    padding-top: 1rem;
 
     @media (max-width: 768px) {
         flex-direction: column;
         justify-items: center;
         min-height: 600px;
-        padding-top: 120px;
+        padding-top: 3rem;
     }
 
 `
@@ -211,11 +207,6 @@ function FacebookOverlay(props){
     )
 }
 
-const ImgStyles = {
-    overflow: 'hidden',
-    width: 'auto',
-}
-
 const CustomImg = styled(B)`
     height: 400px;
     width: 100%;
@@ -236,11 +227,6 @@ function ImgGrid(props) {
 }
 
 function Landing(props) {
-    const { ref, inView } = useInView({
-        threshold: 0,
-        triggerOnce: true,
-      });
-
     return (
         <LandingDiv>
             <TextDiv>
