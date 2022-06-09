@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-body {
-    width: 100%;
-}
-
 .unselectable {
     user-select: none;
     -moz-user-select: none;

@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import styled from "styled-components"
 
 const Container = styled.section`
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   min-height: 400px;
@@ -15,6 +15,7 @@ const Container = styled.section`
   padding-bottom: 3rem;
 
   align-items: center;
+  background-color: black;
 
   
 `

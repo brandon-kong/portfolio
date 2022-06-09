@@ -25,7 +25,12 @@ const pageStyles = {
 
 }
 
+const darkPageStyles = {
+  backgroundColor: "rgb(0, 0, 0)",
+}
+
 const Container = styled.div`
+  
   display: grid;
   grid-template-columns: repeat(1, 1fr);
     gap: 0px;
@@ -65,8 +70,9 @@ const IndexPage = () => {
             <FadeInSection>
               <Slideshow/>
             </FadeInSection>
-
+            <main style={darkPageStyles}>
             <Footer/>
+            </main>
       </Container>
 
       

@@ -28,6 +28,7 @@ const FooterContainer = styled.section`
     margin-right: auto;
     width: 90%;
     
+    
 `
 
 const scrollToTop = () => {
@@ -158,7 +159,7 @@ function Footer(props) {
                     <StaticImage className="unselectable" src="../images/logo-white.png" height={30} alt="brandon kong brand text" placeholder="none"></StaticImage>
                 </ImageHolder>
                 <Middle>
-                    <FooterLink to="/">About</FooterLink>
+                    <FooterLink to="/about-me">About</FooterLink>
                     <FooterLink to="/">Portfolio</FooterLink>
                     <FooterLink to="/">Services</FooterLink>
                 </Middle>

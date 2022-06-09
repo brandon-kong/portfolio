@@ -3,8 +3,11 @@ import Navbar from "../components/Navbar"
 import {Helmet} from "react-helmet"
 import styled from "styled-components"
 
+import Slideshow from "../components/QuoteSection"
 import { HeroContainer, FlexImageContainer, HeroParagraph, ParagraphContainer } from "../components/about-me/Hero"
-import { ExperienceContainer } from "../components/about-me/Experience"
+import { ExperienceContainer, ExperienceItemContainer, SectionFlexDiv, SectionTitle, ExperienceList, ExperienceItem, Achievement } from "../components/about-me/Experience"
+
+import { FadeInSection } from "../components/FadeSection"
 
 import Footer from "../components/Footer"
 
@@ -12,6 +15,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 
 import "../css/root.css"
+import "../css/landing.css"
 
 // styles
 const pageStyles = {
@@ -23,11 +27,16 @@ const pageStyles = {
 
 }
 
+const darkPageStyles = {
+  backgroundColor: "rgb(0, 0, 0)",
+}
+
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 0px;
     grid-auto-rows: minmax(100px, auto);
+    background-color: inherit;
 `
 
 const Heading = styled.h2`
@@ -36,6 +45,12 @@ const Heading = styled.h2`
     font-weight: 1;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    background-color: inherit;
+`
+
+const Link = styled.a`
+  text-decoration: none;
+  color: #c9a500;
 `
 
 
@@ -74,11 +89,59 @@ const IndexPage = () => {
             </HeroContainer>
 
             <ExperienceContainer>
-                <Heading>Experience</Heading>
+                <Heading>Education</Heading>
 
+                <ExperienceItemContainer>
+
+                <FadeInSection>
+                  <SectionFlexDiv>
+                    <SectionTitle>Education</SectionTitle>
+                    <ExperienceList>
+                      <ExperienceItem title="Valencia High School" degree="High school diploma" year="2021-2022" />
+                      <ExperienceItem title="DePaul University" degree="Bachelor's degree in Computer Science" year="Currently attending: 2022-2026" />
+                    </ExperienceList>
+
+                  </SectionFlexDiv>
+                  </FadeInSection>
+
+                  <FadeInSection style={{transitionDelay: '200ms'}}>
+                  <SectionFlexDiv>
+                    <SectionTitle>Achievements</SectionTitle>
+
+                    <ExperienceList>
+                      <Achievement>HarvardX Web Programming Certificate</Achievement>
+                      <Achievement><Link href="https://www.harmonybites.org/">Harmony Bites</Link> Youth Internship Certificate</Achievement>
+                      <Achievement>Information and Communication Technologies Career Pathway Certificate</Achievement>
+                      <Achievement>DECA State Qualifier</Achievement>
+                    </ExperienceList>
+                    <ExperienceList>
+                      
+
+                    </ExperienceList>
+                    
+                  </SectionFlexDiv>
+                </FadeInSection>
+
+                <FadeInSection style={{transitionDelay: '400ms'}}>
+                  <SectionFlexDiv>
+                    <SectionTitle>Experience</SectionTitle>
+                    <ExperienceList>
+                      <ExperienceItem title="Blox Universe" degree="Lead Game Programmer & Developer" year="May 2021 - September 2021" />
+                      <ExperienceItem title="JD (Joven)" degree="Lead Game Programmer & Developer" year="April 2021 - August 2022" href="https://www.youtube.com/c/JDRBX"/>
+                    </ExperienceList>
+                  </SectionFlexDiv>
+                </FadeInSection>
+
+                </ExperienceItemContainer>
 
             </ExperienceContainer>
-            <Footer />
+
+            <main style={darkPageStyles}>
+              <FadeInSection>
+                <Slideshow/>
+              </FadeInSection>
+              <Footer />
+            </main>
       </Container>
 
       

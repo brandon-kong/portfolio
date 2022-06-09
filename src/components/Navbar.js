@@ -8,7 +8,7 @@ const Container = styled.nav`
     min-height: 80px;
     min-width: 200px;
     width: 100%;
-    background-color: ${props => (props.isDark && "black") || ("")};;
+    background-color: ${props => (props.isDark && "black") || ("rgb(230, 230, 230)")};;
     display: flex;
     justify-content: space-around;
     align-items: center;
