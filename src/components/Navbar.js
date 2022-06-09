@@ -8,7 +8,7 @@ const Container = styled.nav`
     min-height: 80px;
     min-width: 200px;
     width: 100%;
-    background-color: ${props => (props.isDark && "black") || ("white")};;
+    background-color: ${props => (props.isDark && "black") || ("")};;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -74,7 +74,6 @@ const StyledLink = styled(Link)`
 
 function HeaderLogo(props) {
     return (
-        
         <LogoTitle>
             <Link to={props.to}>
                 {
@@ -89,7 +88,6 @@ function HeaderLogo(props) {
 
             </BoxBorder>
         </LogoTitle>
-        
     )
 }
 
