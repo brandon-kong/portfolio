@@ -93,7 +93,7 @@ const IndexPage = () => {
 
                 <ExperienceItemContainer>
 
-                <FadeInSection>
+                <FadeInSection threshold={.15}>
                   <SectionFlexDiv>
                     <SectionTitle>Education</SectionTitle>
                     <ExperienceList>
@@ -104,7 +104,7 @@ const IndexPage = () => {
                   </SectionFlexDiv>
                   </FadeInSection>
 
-                  <FadeInSection style={{transitionDelay: '200ms'}}>
+                  <FadeInSection style={{transitionDelay: '200ms'}} threshold={.15}>
                   <SectionFlexDiv>
                     <SectionTitle>Achievements</SectionTitle>
 
@@ -122,7 +122,7 @@ const IndexPage = () => {
                   </SectionFlexDiv>
                 </FadeInSection>
 
-                <FadeInSection style={{transitionDelay: '400ms'}}>
+                <FadeInSection style={{transitionDelay: '400ms'}} threshold={.15}>
                   <SectionFlexDiv>
                     <SectionTitle>Experience</SectionTitle>
                     <ExperienceList>
@@ -137,7 +137,7 @@ const IndexPage = () => {
             </ExperienceContainer>
 
             <main style={darkPageStyles}>
-              <FadeInSection>
+              <FadeInSection threshold={.25}>
                 <Slideshow/>
               </FadeInSection>
               <Footer />

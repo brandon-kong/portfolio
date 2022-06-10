@@ -4,10 +4,13 @@ import { Carousel } from 'react-responsive-carousel';
 import styled from "styled-components"
 
 const Container = styled.section`
-  width: 100%;
+  width: 80%;
   margin: auto;
   display: flex;
   min-height: 400px;
+
+    padding-left: 3rem;
+    padding-left: 3rem;
   
   flex-direction: column; 
 
@@ -33,7 +36,7 @@ const QuoteText = styled.p`
   padding-top: 1rem;
   font-size: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  line-height: 2rem;
+  line-height: 1.8rem;
 
   &::before {
     color: #ffd104;
@@ -109,7 +112,7 @@ function Slideshow() {
       <Container>
         <HeadingTitle>What <InlineColor>employers</InlineColor> have to say about my <InlineColor>ability</InlineColor></HeadingTitle>
         <ItemContainer>
-        <Carousel showArrows={false} showStatus={false} showThumbs={false} autoPlay={true} infiniteLoop={true} showIndicators={false} dynamicHeight={false} stopOnHover={false} interval={10000} width="100%" axis="vertical">
+        <Carousel showArrows={true} showStatus={false} showThumbs={false} autoPlay={true} infiniteLoop={true} showIndicators={false}  dynamicHeight={true} stopOnHover={false} interval={10000} axis="vertical">
           <QuoteBlock role="Illustrator" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
           <QuoteBlock role="CEO of Microsoft" quote="At the end of the day, I know with Brandon, I'll be able to carry out projects that I've only dreamed of while keeping a personal relationship." author="Bill Gates"/>
 

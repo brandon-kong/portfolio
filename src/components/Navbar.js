@@ -119,7 +119,7 @@ function Navbar(props) {
                 <HeaderLogo to="/" isDark={props.isDark}></HeaderLogo>
                 <ListMenu>
                     <Item to="/about-me" isDark={props.isDark}>about me</Item>
-                    <Item to="/" isDark={props.isDark}>portfolio</Item>
+                    <Item to="/portfolio" isDark={props.isDark}>portfolio</Item>
                     <Item to="/" isDark={props.isDark}>contact</Item>
                 </ListMenu>
             </Container>

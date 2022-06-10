@@ -160,7 +160,7 @@ function Footer(props) {
                 </ImageHolder>
                 <Middle>
                     <FooterLink to="/about-me">About</FooterLink>
-                    <FooterLink to="/">Portfolio</FooterLink>
+                    <FooterLink to="/portfolio">Portfolio</FooterLink>
                     <FooterLink to="/">Services</FooterLink>
                 </Middle>
                 <End>
