@@ -159,7 +159,7 @@ function Footer(props) {
                     <StaticImage className="unselectable" src="../images/logo-white.png" height={30} alt="brandon kong brand text" placeholder="none"></StaticImage>
                 </ImageHolder>
                 <Middle>
-                    <FooterLink to="/about-me">About</FooterLink>
+                    <FooterLink to="/about">About</FooterLink>
                     <FooterLink to="/portfolio">Portfolio</FooterLink>
                     <FooterLink to="/">Services</FooterLink>
                 </Middle>

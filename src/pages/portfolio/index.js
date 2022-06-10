@@ -3,19 +3,12 @@ import Navbar from "../../components/Navbar"
 import {Helmet} from "react-helmet"
 import styled from "styled-components"
 
-import Slideshow from "../../components/QuoteSection"
-import { HeroContainer, FlexImageContainer, HeroParagraph, ParagraphContainer } from "../../components/about-me/Hero"
-import { ExperienceContainer, ExperienceItemContainer, SectionFlexDiv, SectionTitle, ExperienceList, ExperienceItem, Achievement } from "../../components/about-me/Experience"
-
-import { FadeInSection } from "../../components/FadeSection"
-
 import Footer from "../../components/Footer"
 
+import { PortfolioHeroContainer, ImageContainer } from "../../components/portfolio/Hero"
 import { StaticImage } from "gatsby-plugin-image"
 
-
 import "../../css/root.css"
-import "../../css/landing.css"
 
 // styles
 const pageStyles = {
@@ -56,6 +49,20 @@ const IndexPage = () => {
       
       <Container>
             <Navbar isDark={false} toggle={toggle}></Navbar>
+            <PortfolioHeroContainer>
+              <ImageContainer>
+                <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
+              </ImageContainer>
+
+              <ImageContainer>
+                <StaticImage src="../../images/game.jpg" layout="constrained" className="zoomImg" />
+              </ImageContainer>
+
+              <ImageContainer>
+                <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
+              </ImageContainer>
+
+            </PortfolioHeroContainer>
             <Footer />
       </Container>
 

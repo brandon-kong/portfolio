@@ -86,3 +86,12 @@ h1, p {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+  .zoomImg {
+    transition: transform .5s ease, filter .15s ease-in-out;
+  }
+
+  .zoomImg:hover {
+    transform: scale(1.25);
+    filter: brightness(50%);
+  }
