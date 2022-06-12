@@ -161,10 +161,9 @@ function Footer(props) {
                 <Middle>
                     <FooterLink to="/about">About</FooterLink>
                     <FooterLink to="/portfolio">Portfolio</FooterLink>
-                    <FooterLink to="/">Services</FooterLink>
                 </Middle>
                 <End>
-                    <Button to="/">Contact Me</Button>
+                    <Button to="/contact">Contact Me</Button>
                 </End>
             </FooterNavContainer>
             <Break/>

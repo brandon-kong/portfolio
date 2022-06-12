@@ -113,14 +113,15 @@ const CustomHeader = styled.header`
 `
 
 function Navbar(props) {
+    const isDark = props.isDark;
     return (
-        <CustomHeader doesStick={props.doesStick}>
+        <CustomHeader>
             <Container isDark={props.isDark}>
                 <HeaderLogo to="/" isDark={props.isDark}></HeaderLogo>
                 <ListMenu>
                     <Item to="/about" isDark={props.isDark}>about me</Item>
                     <Item to="/portfolio" isDark={props.isDark}>portfolio</Item>
-                    <Item to="/" isDark={props.isDark}>contact</Item>
+                    <Item to="/contact" isDark={props.isDark}>contact</Item>
                 </ListMenu>
             </Container>
         </CustomHeader>
