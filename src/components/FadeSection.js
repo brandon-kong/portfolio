@@ -8,7 +8,7 @@ export function FadeInSection(props) {
   });
 
   return (
-    <div inView={inView} className={`fade-in-section ${inView ? "is-visible" : ''}`} style={props.style}>
+    <div className={`fade-in-section ${inView ? "is-visible" : ''}`} style={props.style}>
       <div ref={ref}>
           {props.children}
       </div>
@@ -23,7 +23,7 @@ export function TweenInSection(props) {
   });
 
   return (
-    <div inView={inView} className={`tween-in-section ${inView ? "is-visible" : ''}`} style={props.style}>
+    <div className={`tween-in-section ${inView ? "is-visible" : ''}`} style={props.style}>
       <div ref={ref}>
           {props.children}
       </div>

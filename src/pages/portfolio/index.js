@@ -27,7 +27,7 @@ const darkPageStyles = {
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 2px;
+    gap: 0px;
     grid-auto-rows: minmax(100px, auto);
     background-color: inherit;
 `
@@ -53,17 +53,17 @@ const IndexPage = () => {
               <PortfolioItemContainer>
                 <ImageContainer to="/portfolio/web-design">
                   <TopBorder>Web Design</TopBorder>
-                  <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
+                  <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" alt="web design picture" />
                 </ImageContainer>
 
                 <ImageContainer to="/portfolio/hardware">
                 <TopBorder>Hardware</TopBorder>
-                  <StaticImage src="../../images/hardware.jpg" layout="constrained" className="zoomImg" />
+                  <StaticImage src="../../images/hardware.jpg" layout="constrained" className="zoomImg" alt="hardware picture" />
                 </ImageContainer>
 
                 <ImageContainer to="/portfolio/games">
                 <TopBorder>Game Design</TopBorder>
-                  <StaticImage src="../../images/game.jpg" layout="constrained" className="zoomImg" />
+                  <StaticImage src="../../images/game.jpg" layout="constrained" className="zoomImg" alt="game design picture" />
                 </ImageContainer>
               </PortfolioItemContainer>
             </PortfolioHeroContainer>
