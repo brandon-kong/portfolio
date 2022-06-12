@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import Footer from "../../components/Footer"
 
-import { PortfolioHeroContainer, ImageContainer } from "../../components/portfolio/Hero"
+import { PortfolioHeroContainer, ImageContainer, PortfolioItemContainer, TopBorder } from "../../components/portfolio/Hero"
 import { StaticImage } from "gatsby-plugin-image"
 
 import "../../css/root.css"
@@ -27,7 +27,7 @@ const darkPageStyles = {
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 0px;
+    gap: 2px;
     grid-auto-rows: minmax(100px, auto);
     background-color: inherit;
 `
@@ -50,18 +50,22 @@ const IndexPage = () => {
       <Container>
             <Navbar isDark={false} toggle={toggle}></Navbar>
             <PortfolioHeroContainer>
-              <ImageContainer>
-                <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
-              </ImageContainer>
+              <PortfolioItemContainer>
+                <ImageContainer to="/portfolio/web-design">
+                  <TopBorder>Web Design</TopBorder>
+                  <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
+                </ImageContainer>
 
-              <ImageContainer>
-                <StaticImage src="../../images/game.jpg" layout="constrained" className="zoomImg" />
-              </ImageContainer>
+                <ImageContainer to="/portfolio/hardware">
+                <TopBorder>Hardware</TopBorder>
+                  <StaticImage src="../../images/hardware.jpg" layout="constrained" className="zoomImg" />
+                </ImageContainer>
 
-              <ImageContainer>
-                <StaticImage src="../../images/web-design.png" layout="constrained" className="zoomImg" />
-              </ImageContainer>
-
+                <ImageContainer to="/portfolio/games">
+                <TopBorder>Game Design</TopBorder>
+                  <StaticImage src="../../images/game.jpg" layout="constrained" className="zoomImg" />
+                </ImageContainer>
+              </PortfolioItemContainer>
             </PortfolioHeroContainer>
             <Footer />
       </Container>
