@@ -4,14 +4,10 @@ import { Carousel } from 'react-responsive-carousel';
 import styled from "styled-components"
 
 const Container = styled.section`
-  width: 80%;
   margin: auto;
   display: flex;
   min-height: 400px;
 
-    padding-left: 3rem;
-    padding-left: 3rem;
-  
   flex-direction: column; 
 
   padding-top: 3rem;

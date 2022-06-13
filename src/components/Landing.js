@@ -234,7 +234,7 @@ function Landing(props) {
                 <MainText>I'm Brandon Kong, a <span style={PrimaryText}>full stack developer</span></MainText>
                 <BottomText>I'm an 18 year old versatile developer with over 6 years of experience in fields ranging from <b style={BoldedParagraph}>game development,</b> <b style={BoldedParagraph}>web development,</b> and <b style={BoldedParagraph}>software development.</b></BottomText>
                 <BottomOverlay>
-                    <Button to="/">Portfolio</Button>
+                    <Button to="/portfolio">Portfolio</Button>
                     <Overlays>
                         <LineItem>
                             <GithubOverlay to="https://github.com/brandon-kong"/>
