@@ -87,6 +87,32 @@ const config: Omit<Config, 'content'> = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
             },
+            width: {
+                sidebar: 'var(--sidebar-width)',
+                'sidebar-expanded': 'var(--sidebar-width-expanded)',
+                'content-width': 'var(--content-width)',
+            },
+            maxWidth: {
+                'content-width': 'var(--content-width)',
+            },
+            height: {
+                navbar: 'var(--navbar-height)',
+            },
+            spacing: {
+                'main-padding': 'var(--main-padding)',
+                sidebar: 'var(--sidebar-width)',
+                navbar: 'var(--navbar-height)',
+            },
+            screens: {
+                sm: '640px',
+                md: '768px',
+                'sidebar-shown': '875px',
+                lg: '1024px',
+                'lg-max': { max: '1023px', min: '875px' },
+                xl: '1280px',
+                'icon-only': '1368px',
+                '2xl': '1536px',
+            },
         },
     },
     plugins: [],
