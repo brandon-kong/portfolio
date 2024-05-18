@@ -5,8 +5,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@repo/ui/providers';
 import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
-import { TooltipProvider } from '@repo/ui/tooltip';
-import cn from '../../../../packages/utils/src/cn';
+import { cn } from '@repo/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +29,7 @@ export default function RootLayout({
 
                         <main
                             className={cn(
-                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden',
+                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 pb-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden',
                             )}
                         >
                             <div
