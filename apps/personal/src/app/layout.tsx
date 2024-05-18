@@ -22,27 +22,28 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <ThemeProvider>
-                    <div
-                        className={'flex min-h-screen'}
-                    >
+                    <div className={'flex min-h-screen'}>
                         <Sidebar />
 
                         <main
-                        className={'flex-1 py-4 pr-4 pl-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden'}>
+                            className={
+                                'flex-1 py-4 pr-4 pl-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden'
+                            }
+                        >
                             <div
-                            className={'bg-background-nav w-full rounded-lg h-full py-20'}
+                                className={
+                                    'bg-background-nav w-full rounded-lg h-full py-20'
+                                }
                             >
                                 <div
-                                id="content"
-                                className={'mx-auto w-full max-w-4xl p-4'}
+                                    id="content"
+                                    className={'mx-auto w-full max-w-4xl p-4'}
                                 >
-                                    { children }
+                                    {children}
                                     <Footer />
                                 </div>
                             </div>
-                            
                         </main>
-                        
                     </div>
                 </ThemeProvider>
             </body>

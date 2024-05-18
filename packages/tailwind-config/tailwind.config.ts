@@ -35,7 +35,7 @@ const config: Omit<Config, 'content'> = {
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
                 background: 'hsl(var(--background))',
-                "background-nav": "hsl(var(--background-nav))",
+                'background-nav': 'hsl(var(--background-nav))',
                 foreground: 'hsl(var(--foreground))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',

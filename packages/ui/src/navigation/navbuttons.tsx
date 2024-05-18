@@ -32,8 +32,7 @@ const navItems = [
     },
 ];
 
-export function NavigationButtons (): JSX.Element {
-
+export function NavigationButtons(): JSX.Element {
     const pathname = usePathname();
 
     return (
@@ -42,8 +41,7 @@ export function NavigationButtons (): JSX.Element {
                 {navItems.map((item, index) => {
                     const firstPath = '/' + pathname.split('/')[1];
                     const isSelected =
-                        pathname === item.href ||
-                        firstPath === item.href;
+                        pathname === item.href || firstPath === item.href;
                     return (
                         <li
                             key={index}
@@ -55,11 +53,10 @@ export function NavigationButtons (): JSX.Element {
                                 label={item.name}
                                 href={item.href}
                             />
-                                
                         </li>
                     );
                 })}
             </ul>
         </nav>
-    )
+    );
 }

@@ -92,9 +92,7 @@ export default function Sidebar() {
                         className={
                             'flex flex-row-reverse items-center justify-center gap-4'
                         }
-                    >
-                      
-                    </div>
+                    ></div>
                 </div>
 
                 <NavigationButtons />
