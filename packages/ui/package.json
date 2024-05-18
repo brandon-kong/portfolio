@@ -9,6 +9,7 @@
     "./typography": "./src/typography.tsx",
     "./providers": "./src/providers/index.ts",
     "./navigation": "./src/navigation/index.ts",
+    "./tooltip": "./src/tooltip.tsx",
     "./globals.css": "./dist/globals.css"
   },
   "scripts": {
@@ -38,9 +39,11 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
     "@repo/utils": "workspace:^",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.2.4",
     "lucide-react": "^0.378.0",
     "next": "^14.2.3",
     "next-themes": "^0.3.0",

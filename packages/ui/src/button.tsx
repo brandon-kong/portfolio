@@ -92,4 +92,38 @@ const SidebarButton = React.forwardRef<HTMLButtonElement, SidebarButtonProps>(
     },
 );
 
-export { Button, buttonVariants, SidebarButton };
+export interface NavbarButtonProps extends ButtonProps {
+    active?: boolean;
+    icon: React.JSX.Element;
+    href?: string;
+    label: string;
+}
+
+const NavbarButton = React.forwardRef<HTMLButtonElement, SidebarButtonProps>(
+    ({ active, icon, href, label, ...props }, ref) => {
+        return (
+            <Link
+                href={href || '#'}
+                aria-selected={active}
+                className={'rounded-md w-full'}
+            >
+                <Button
+                    tabIndex={-1}
+                    variant={'ghost'}
+                    className={cn(
+                        'p-2 px-6 h-12 flex items-center justify-start gap-4 w-full',
+                        active && 'text-primary bg-accent hover:bg-accent/90',
+                        !active && 'text-accent-foreground/60',
+                    )}
+                    {...props}
+                    ref={ref}
+                >
+                    {icon}
+                    <P>{label}</P>
+                </Button>
+            </Link>
+        );
+    },
+);
+
+export { Button, buttonVariants, SidebarButton, NavbarButton };

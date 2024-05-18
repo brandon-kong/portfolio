@@ -38,6 +38,7 @@
         /* Sizes */
         --radius: 1em;
         --sidebar-width: 280px;
+        --navbar-height: 70px;
     }
 
     .dark {

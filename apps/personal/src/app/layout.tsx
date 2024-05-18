@@ -4,7 +4,8 @@ import '@repo/ui/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@repo/ui/providers';
-import { Sidebar, Footer } from '@repo/ui/navigation';
+import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
+import { TooltipProvider } from '@repo/ui/tooltip';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,12 +23,13 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <ThemeProvider>
-                    <div className={'flex min-h-screen'}>
+                    <div className={'flex min-h-screen relative'}>
                         <Sidebar />
+                        <Navbar />
 
                         <main
                             className={
-                                'flex-1 py-4 pr-4 pl-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden'
+                                'flex-1 py-4 pt-navbar pr-4 pl-4 sidebar-shown:pl-0 sidebar-shown:pt-4 rounded-lg min-h-screen overflow-y-hidden'
                             }
                         >
                             <div
@@ -37,7 +39,9 @@ export default function RootLayout({
                             >
                                 <div
                                     id="content"
-                                    className={'mx-auto w-full max-w-4xl p-4'}
+                                    className={
+                                        'mx-auto w-full max-w-4xl p-4 px-8'
+                                    }
                                 >
                                     {children}
                                     <Footer />
