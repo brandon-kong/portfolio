@@ -4,7 +4,6 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@repo/utils';
 
-import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { P } from './typography';
 
@@ -18,7 +17,7 @@ const buttonVariants = cva(
                 destructive:
                     'bg-destructive text-destructive-foreground hover:bg-destructive/90',
                 outline:
-                    'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+                    'border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground',
                 secondary:
                     'bg-secondary text-secondary-foreground hover:bg-secondary/80',
                 ghost: 'hover:bg-accent hover:text-accent-foreground',
@@ -27,7 +26,7 @@ const buttonVariants = cva(
             size: {
                 default: 'h-10 px-4 py-2',
                 sm: 'h-9 rounded-md px-3',
-                lg: 'h-11 rounded-md px-8',
+                lg: 'h-12 rounded-md px-8',
                 icon: 'h-10 w-10',
             },
         },
@@ -78,7 +77,8 @@ const SidebarButton = React.forwardRef<HTMLButtonElement, SidebarButtonProps>(
                     variant={'ghost'}
                     className={cn(
                         'p-2 icon-only:px-6 h-12 flex items-center justify-center icon-only:justify-start gap-4 w-full sidebar-shown:aspect-square',
-                        active && 'text-primary bg-accent hover:bg-accent/90',
+                        active &&
+                            'text-accent-foreground bg-accent hover:bg-accent/90',
                         !active && 'text-accent-foreground/60',
                     )}
                     {...props}

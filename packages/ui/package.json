@@ -4,11 +4,12 @@
   "private": true,
   "exports": {
     "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
+    "./card": "./src/cards/index.tsx",
     "./code": "./src/code.tsx",
     "./typography": "./src/typography.tsx",
     "./providers": "./src/providers/index.ts",
     "./navigation": "./src/navigation/index.ts",
+    "./containers": "./src/containers/index.ts",
     "./tooltip": "./src/tooltip.tsx",
     "./globals.css": "./dist/globals.css"
   },

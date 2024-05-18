@@ -53,6 +53,7 @@
         --radius: 1em;
         --sidebar-width: 280px;
         --navbar-height: 70px;
+        --content-width: 928px;
     }
 
     .dark {
@@ -66,10 +67,10 @@
         --popover: 0 0% 3.9%;
         --popover-foreground: 0 0% 98%;
 
-        --primary: 0 0% 98%;
+        --primary: 45 99% 56%;
         --primary-foreground: 0 0% 9%;
 
-        --secondary: 0 0% 14.9%;
+        --secondary: 0 0% 28.9%;
         --secondary-foreground: 0 0% 98%;
 
         --muted: 0 0% 14.9%;

@@ -92,16 +92,15 @@ const config: Omit<Config, 'content'> = {
             width: {
                 sidebar: 'var(--sidebar-width)',
                 'sidebar-expanded': 'var(--sidebar-width-expanded)',
-                'content-width': 'var(--content-width)',
+                content: 'var(--content-width)',
             },
             maxWidth: {
-                'content-width': 'var(--content-width)',
+                content: 'var(--content-width)',
             },
             height: {
                 navbar: 'var(--navbar-height)',
             },
             spacing: {
-                'main-padding': 'var(--main-padding)',
                 sidebar: 'var(--sidebar-width)',
                 navbar: 'var(--navbar-height)',
             },

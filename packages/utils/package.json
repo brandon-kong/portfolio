@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./blogs": "./src/blogs.ts",
+    "./projects": "./src/projects.ts",
+    "./types": "./types/index.ts"
+  },
+  "scripts": {
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output ./src/types/contentful.d.ts"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -12,12 +18,16 @@
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
     "autoprefixer": "^10.4.19",
+    "cf-content-types-generator": "^2.15.1",
+    "contentful-typescript-codegen": "^3.4.0",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "contentful": "^10.11.0",
+    "contentful-management": "^11.25.5",
     "next": "^14.2.3",
     "tailwind-merge": "^2.3.0"
   }

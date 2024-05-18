@@ -29,7 +29,7 @@ export default function RootLayout({
 
                         <main
                             className={cn(
-                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 pb-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden',
+                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 pb-4 sidebar-shown:pl-sidebar rounded-lg min-h-screen overflow-y-hidden',
                             )}
                         >
                             <div
@@ -40,7 +40,7 @@ export default function RootLayout({
                                 <div
                                     id="content"
                                     className={
-                                        'mx-auto w-full max-w-4xl p-4 px-8'
+                                        'mx-auto w-full max-w-content p-4 px-8'
                                     }
                                 >
                                     {children}

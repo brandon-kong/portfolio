@@ -7,7 +7,7 @@ import { Role } from './components';
 
 export default function Sidebar() {
     return (
-        <aside className="hidden sidebar-shown:flex flex-col justify-between sticky top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
+        <aside className="hidden sidebar-shown:flex flex-col justify-between fixed top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
             <div>
                 <Role />
 
