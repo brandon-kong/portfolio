@@ -30,10 +30,12 @@ const config: Omit<Config, 'content'> = {
         },
         extend: {
             colors: {
+                divider: 'hsl(var(--divider))',
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
                 background: 'hsl(var(--background))',
+                "background-nav": "hsl(var(--background-nav))",
                 foreground: 'hsl(var(--foreground))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
@@ -108,7 +110,6 @@ const config: Omit<Config, 'content'> = {
                 md: '768px',
                 'sidebar-shown': '875px',
                 lg: '1024px',
-                'lg-max': { max: '1023px', min: '875px' },
                 xl: '1280px',
                 'icon-only': '1368px',
                 '2xl': '1536px',

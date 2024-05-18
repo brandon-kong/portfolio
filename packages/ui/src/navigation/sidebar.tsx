@@ -1,5 +1,3 @@
-'use client';
-
 import { H4, P } from '../typography';
 import Image from 'next/image';
 import { Home, Briefcase, User, PenTool, Mail } from 'react-feather';
@@ -9,33 +7,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { NavigationButtons } from './navbuttons';
 
 const navItems = [
     {
         name: 'Homepage',
         href: '/',
-        icon: Home,
+        icon: <Home size={20} />,
     },
     {
         name: 'Projects',
         href: '/projects',
-        icon: Briefcase,
+        icon: <Briefcase size={20} />,
     },
     {
         name: 'About',
         href: '/about',
-        icon: User,
+        icon: <User size={20} />,
     },
     {
         name: 'Blog',
         href: '/blog',
-        icon: PenTool,
+        icon: <PenTool size={20} />,
     },
     {
         name: 'Contact',
         href: '/contact',
-        icon: Mail,
+        icon: <Mail size={20} />,
     },
 ];
 
@@ -54,10 +52,8 @@ const links = [
 ];
 
 export default function Sidebar() {
-    const pathname = usePathname();
-
     return (
-        <aside className="hidden sidebar-shown:flex flex-col justify-between fixed py-10 px-3 icon-only:px-6 w-sidebar h-full">
+        <aside className="hidden sidebar-shown:flex flex-col justify-between sticky top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
             <div>
                 <div
                     className={
@@ -67,8 +63,8 @@ export default function Sidebar() {
                     <div className={'flex items-center justify-center'}>
                         <Image
                             src="/images/profile-picture.jpg"
-                            width={2000}
-                            height={2000}
+                            width={100}
+                            height={100}
                             alt="logo"
                             priority
                             className="w-12 h-12 icon-only:h-14 icon-only:w-14 rounded-full aspect-square"
@@ -97,66 +93,11 @@ export default function Sidebar() {
                             'flex flex-row-reverse items-center justify-center gap-4'
                         }
                     >
-                        {links.map((link, index) => {
-                            return (
-                                <Link
-                                    key={index}
-                                    href={link.href}
-                                    target="_blank"
-                                    aria-label="Social Media Link"
-                                    rel="noreferrer"
-                                    className="group w-8 h-8 rounded-full aspect-square p-1 bg-transparent transition-colors duration-300 hover:bg-background-secondary-900"
-                                >
-                                    <FontAwesomeIcon
-                                        icon={link.icon}
-                                        className="w-6 h-6 text-background-secondary-500 group-hover:text-background-secondary-50 duration-300 aspect-square"
-                                    />
-                                </Link>
-                            );
-                        })}
+                      
                     </div>
                 </div>
 
-                <nav className={'h-auto w-full flex-1'}>
-                    <ul className="space-y-1 mt-8 flex flex-col items-center h-full">
-                        {navItems.map((item, index) => {
-                            const firstPath = '/' + pathname.split('/')[1];
-                            const isSelected =
-                                pathname === item.href ||
-                                firstPath === item.href;
-                            return (
-                                <li
-                                    key={index}
-                                    data-selected={isSelected}
-                                    className="aspect-square icon-only:aspect-auto w-12 icon-only:w-full group h-auto icon-only:h-[40px] hover:bg-background-secondary-900/40 rounded-xl px-0 icon-only:px-3 transition-colors duration-300 cursor-pointer data-[selected=true]:bg-background-secondary-900"
-                                >
-                                    <Link
-                                        href={item.href}
-                                        className="h-full w-full flex items-center justify-center icon-only:justify-start gap-3"
-                                    >
-                                        <item.icon
-                                            className={cn(
-                                                'w-5 h-5 stroke-background-secondary-400',
-                                                isSelected &&
-                                                    'stroke-background-secondary-50',
-                                            )}
-                                        />
-
-                                        <span
-                                            className={cn(
-                                                'font-semibold text-background-secondary-400 text-sm hidden icon-only:inline-block',
-                                                isSelected &&
-                                                    'text-background-secondary-50',
-                                            )}
-                                        >
-                                            {item.name}
-                                        </span>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </nav>
+                <NavigationButtons />
             </div>
 
             <div className={'flex flex-col items-center icon-only:hidden'}>
