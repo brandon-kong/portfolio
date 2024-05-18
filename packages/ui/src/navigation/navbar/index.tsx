@@ -42,7 +42,7 @@ export default function Navbar() {
                     <button
                         onClick={() => setOpen(!open)}
                         className={
-                            'group cursor-pointer flex items-center justify-center rounded-xl w-10 h-10 p-1 bg-transparent transition-colors duration-300 hover:bg-background-secondary-900'
+                            'group cursor-pointer flex items-center justify-center rounded-xl w-10 h-10 p-1 bg-transparent transition-colors duration-300'
                         }
                     >
                         <Menu className="w-6 h-6 stroke-accent-foreground" />

@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@repo/ui/providers';
 import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
 import { TooltipProvider } from '@repo/ui/tooltip';
+import cn from '../../../../packages/utils/src/cn';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,9 +29,9 @@ export default function RootLayout({
                         <Navbar />
 
                         <main
-                            className={
-                                'flex-1 py-4 pt-navbar pr-4 pl-4 sidebar-shown:pl-0 sidebar-shown:pt-4 rounded-lg min-h-screen overflow-y-hidden'
-                            }
+                            className={cn(
+                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 sidebar-shown:pl-0 rounded-lg min-h-screen overflow-y-hidden',
+                            )}
                         >
                             <div
                                 className={
