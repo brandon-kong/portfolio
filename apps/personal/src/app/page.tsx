@@ -3,7 +3,7 @@ import { LocationCard } from '@repo/ui/card';
 import { ProjectsContainer, BlogsContainer } from '@repo/ui/containers';
 import { Button } from '@repo/ui/button';
 
-export default function Projects(): JSX.Element {
+export default function Home(): JSX.Element {
     return (
         <div className={'space-y-20'}>
             <div className={'space-y-10'}>

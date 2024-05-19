@@ -54,10 +54,8 @@ export default function BlogPostCard({
                         </P>
                         <Button
                             size={'default'}
-                            variant={'link'}
-                            className={
-                                'w-full sidebar-shown:w-fit mt-4 p-0 group'
-                            }
+                            variant={'secondary'}
+                            className={'w-full sidebar-shown:w-fit mt-4 group'}
                         >
                             <Link
                                 href={`/blog/${slug}`}
@@ -66,7 +64,7 @@ export default function BlogPostCard({
                                 Read more about this blog
                                 <ChevronRight
                                     className={
-                                        'group-hover:translate-x-2 transition-transform duration-500'
+                                        'group-hover:translate-x-1 transition-transform duration-500'
                                     }
                                     size={15}
                                 />
