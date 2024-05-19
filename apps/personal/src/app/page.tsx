@@ -1,10 +1,9 @@
 import { H2, P } from '@repo/ui/typography';
-import Card, { LocationCard } from '@repo/ui/card';
-import { ProjectsContainer } from '@repo/ui/containers';
-import BlogPostContainer from '../../../../packages/ui/src/containers/blogs-container';
+import { LocationCard } from '@repo/ui/card';
+import { ProjectsContainer, BlogsContainer } from '@repo/ui/containers';
 import { Button } from '@repo/ui/button';
 
-export default function Page(): JSX.Element {
+export default function Projects(): JSX.Element {
     return (
         <div className={'space-y-20'}>
             <div className={'space-y-10'}>
@@ -39,7 +38,7 @@ export default function Page(): JSX.Element {
 
             <ProjectsContainer title="Selected Work" limit={4} />
 
-            <BlogPostContainer title="Selected Writings" limit={4} />
+            <BlogsContainer title="Selected Writings" limit={4} />
         </div>
     );
 }

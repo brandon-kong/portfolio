@@ -5,11 +5,13 @@ import { Button } from '../button';
 import BlogPostCard from '../cards/blogs';
 
 type BlogPostsContainerProps = {
+    noTitle?: boolean;
     title?: string;
     limit?: number;
 };
 
 export default async function BlogPostContainer({
+    noTitle = false,
     title = 'Selected Writings',
     limit = -1,
 }: BlogPostsContainerProps) {
@@ -22,13 +24,15 @@ export default async function BlogPostContainer({
     return (
         <div className={'space-y-8'}>
             <div className={'space-y-2'}>
-                <Button
-                    variant={'link'}
-                    className={'p-0 text-accent-foreground h-fit'}
-                >
-                    View All
-                </Button>
-                <H3>{title}</H3>
+                {limit > 0 && (
+                    <Button
+                        variant={'link'}
+                        className={'p-0 text-accent-foreground h-fit'}
+                    >
+                        View All
+                    </Button>
+                )}
+                {!noTitle && <H3>{title}</H3>}
             </div>
 
             <ul className={'grid grid-cols-1 gap-8'}>

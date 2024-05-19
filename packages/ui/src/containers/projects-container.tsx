@@ -4,11 +4,13 @@ import { H3 } from '../typography';
 import { Button } from '../button';
 
 type ProjectsContainerProps = {
+    noTitle?: boolean;
     title?: string;
     limit?: number;
 };
 
 export default async function ProjectsContainer({
+    noTitle = false,
     title = 'Projects',
     limit = -1,
 }: ProjectsContainerProps) {
@@ -21,13 +23,15 @@ export default async function ProjectsContainer({
     return (
         <div className={'space-y-8'}>
             <div className={'space-y-2'}>
-                <Button
-                    variant={'link'}
-                    className={'p-0 text-accent-foreground h-fit'}
-                >
-                    View All
-                </Button>
-                <H3>{title}</H3>
+                {limit > 0 && (
+                    <Button
+                        variant={'link'}
+                        className={'p-0 text-accent-foreground h-fit'}
+                    >
+                        View All
+                    </Button>
+                )}
+                {!noTitle && <H3>{title}</H3>}
             </div>
 
             <ul className={'grid grid-cols-1 sidebar-shown:grid-cols-2 gap-8'}>

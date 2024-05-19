@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { H3, H4, P } from '../typography';
 import { Button } from '../button';
 import { TypeBlogPost } from '@repo/utils/types';
+import Link from 'next/link';
+import { ChevronRight } from 'react-feather';
 
 type BlogPostCardProps = {
     blogPost: TypeBlogPost;
@@ -51,10 +53,24 @@ export default function BlogPostCard({
                                 : description}
                         </P>
                         <Button
-                            variant={'secondary'}
-                            className={'w-full sidebar-shown:w-fit mt-4'}
+                            size={'default'}
+                            variant={'link'}
+                            className={
+                                'w-full sidebar-shown:w-fit mt-4 p-0 group'
+                            }
                         >
-                            Read More About This Blog
+                            <Link
+                                href={`/blog/${slug}`}
+                                className={'flex items-center gap-1'}
+                            >
+                                Read more about this blog
+                                <ChevronRight
+                                    className={
+                                        'group-hover:translate-x-2 transition-transform duration-500'
+                                    }
+                                    size={15}
+                                />
+                            </Link>
                         </Button>
                     </div>
                 </div>

@@ -54,3 +54,6 @@ export function LocationCard() {
         </div>
     );
 }
+
+export { default as BlogPostCard } from './blogs';
+export { default as ProjectCard } from './project';
