@@ -8,7 +8,7 @@ export function Role() {
         <div className={'flex flex-col items-center justify-center w-full'}>
             <div className={'flex items-center justify-center'}>
                 <Image
-                    src="/images/profile-picture.jpg"
+                    src="/images/profile-picture.webp"
                     width={100}
                     height={100}
                     alt="logo"

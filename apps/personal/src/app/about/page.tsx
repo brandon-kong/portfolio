@@ -1,15 +1,17 @@
 import { H2, P } from '@repo/ui/typography';
-import { LocationCard } from '@repo/ui/card';
-import { ProjectsContainer, BlogsContainer } from '@repo/ui/containers';
-import { Button } from '@repo/ui/button';
+import {
+    ProjectsContainer,
+    BlogsContainer,
+    ExperiencesContainer,
+} from '@repo/ui/containers';
 import Image from 'next/image';
 
 export default function About(): JSX.Element {
     return (
         <div className={'space-y-20'}>
             <div className={'space-y-10'}>
-                <div className={'flex gap-6'}>
-                    <div className={'space-y-10 max-w-xl'}>
+                <div className={'flex gap-6 justify-between'}>
+                    <div className={'space-y-10 flex-1'}>
                         <div className={'space-y-4'}>
                             <H2>Brandon Kong</H2>
                             <H2 className={'text-accent-foreground'}>
@@ -39,14 +41,16 @@ export default function About(): JSX.Element {
                     </div>
 
                     <Image
-                        src={'/images/brandon.jpg'}
+                        src={'/images/profile-picture.webp'}
                         alt={'Brandon Kong'}
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                         className={'rounded-full flex-shrink-0 self-start'}
                     />
                 </div>
             </div>
+
+            <ExperiencesContainer />
 
             <ProjectsContainer title="Selected Work" limit={4} />
 

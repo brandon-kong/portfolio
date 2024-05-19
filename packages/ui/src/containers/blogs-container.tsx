@@ -1,5 +1,4 @@
-import { fetchBlogPosts } from '@repo/utils/blogs';
-import ProjectCard from '../cards/project';
+import { fetchBlogPosts } from '@repo/utils/contentful';
 import { H3 } from '../typography';
 import { Button } from '../button';
 import BlogPostCard from '../cards/blogs';

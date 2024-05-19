@@ -38,7 +38,7 @@ export default function Home(): JSX.Element {
 
             <ProjectsContainer title="Selected Work" limit={4} />
 
-            <BlogsContainer title="Selected Writings" limit={4} />
+            <BlogsContainer title="Blog" limit={4} />
         </div>
     );
 }

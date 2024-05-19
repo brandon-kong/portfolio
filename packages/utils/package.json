@@ -6,6 +6,7 @@
     ".": "./src/index.ts",
     "./blogs": "./src/blogs.ts",
     "./projects": "./src/projects.ts",
+    "./contentful": "./src/contentful/index.ts",
     "./types": "./types/index.ts"
   },
   "scripts": {

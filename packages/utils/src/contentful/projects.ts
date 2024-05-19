@@ -1,4 +1,4 @@
-import { ProjectEntrySkeleton, TypeProject } from '../types/project';
+import { ProjectEntrySkeleton, TypeProject } from '../../types/project';
 import { cfClient } from './cf-client';
 
 export const fetchProjects = async (): Promise<TypeProject[]> => {

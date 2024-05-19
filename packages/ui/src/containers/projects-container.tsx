@@ -1,4 +1,4 @@
-import { fetchProjects } from '@repo/utils/projects';
+import { fetchProjects } from '@repo/utils/contentful';
 import ProjectCard from '../cards/project';
 import { H3 } from '../typography';
 import { Button } from '../button';

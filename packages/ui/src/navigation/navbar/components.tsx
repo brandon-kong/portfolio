@@ -1,7 +1,5 @@
-import { H4, P } from '../../typography';
+import { H4 } from '../../typography';
 import Image from 'next/image';
-
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function Role() {
     return (
@@ -9,7 +7,7 @@ export function Role() {
             <div className={'flex items-center justify-center gap-4'}>
                 <div className={'flex items-center justify-center'}>
                     <Image
-                        src="/images/profile-picture.jpg"
+                        src="/images/profile-picture.webp"
                         width={2000}
                         height={2000}
                         alt="logo"
