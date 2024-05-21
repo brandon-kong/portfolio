@@ -1,7 +1,5 @@
-import { H4, P } from '../../typography';
+import { H4 } from '../../typography';
 import Image from 'next/image';
-
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function Role() {
     return (

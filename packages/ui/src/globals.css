@@ -12,7 +12,6 @@
 @media (max-width: 1367px) {
     :root {
         --sidebar-width: 80px;
-        --content-width: 728px;
     }
 }
 

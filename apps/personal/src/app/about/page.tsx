@@ -1,10 +1,12 @@
 import { H2, P } from '@repo/ui/typography';
 import {
-    ProjectsContainer,
     BlogsContainer,
     ExperiencesContainer,
+    EducationsContainer,
+    SkillsContainer,
 } from '@repo/ui/containers';
 import Image from 'next/image';
+import { SkillCard } from '@repo/ui/card';
 
 export default function About(): JSX.Element {
     return (
@@ -45,16 +47,20 @@ export default function About(): JSX.Element {
                         alt={'Brandon Kong'}
                         width={200}
                         height={200}
-                        className={'rounded-full flex-shrink-0 self-start'}
+                        className={
+                            'rounded-full flex-shrink-0 self-start hidden sidebar-shown:flex'
+                        }
                     />
                 </div>
             </div>
 
+            <SkillsContainer />
+
             <ExperiencesContainer />
 
-            <ProjectsContainer title="Selected Work" limit={4} />
+            <EducationsContainer />
 
-            <BlogsContainer title="Selected Writings" limit={4} />
+            <BlogsContainer title="Blog" limit={4} />
         </div>
     );
 }

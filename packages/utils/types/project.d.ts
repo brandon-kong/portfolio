@@ -1,6 +1,6 @@
-import type { Asset, Entry, EntryFields, EntrySkeletonType } from 'contentful';
+import type { Asset, Entry, EntryFields, EntrySkeletonType } from "contentful";
 
-export interface TypeProjectFields {
+export interface TypeProjectFields implements EntrySkeletonType {
     fields: {
         title: EntryFields.Symbol;
         background: string;
@@ -12,8 +12,8 @@ export interface TypeProjectFields {
 }
 
 export type ProjectEntrySkeleton = {
-    contentTypeId: 'project';
-    fields: TypeProjectFields['fields'];
-};
+    contentTypeId: "project";
+    fields: TypeProjectFields["fields"];
+}
 
-export type TypeProject = Entry<ProjectEntrySkeleton, undefined, string>;
+export type TypeProject = Entry<ProjectEntrySkeleton, undefined, 'project'>;

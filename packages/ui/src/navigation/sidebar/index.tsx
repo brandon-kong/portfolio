@@ -1,7 +1,3 @@
-import { H4, P } from '../../typography';
-import Image from 'next/image';
-
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FooterNavigationButtonContainer, SocialLinks } from '../navbuttons';
 import { Role } from './components';
 

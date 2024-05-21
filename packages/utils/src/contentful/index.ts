@@ -1,4 +1,6 @@
 export { fetchBlogPosts } from './blogs';
-export { fetchProjects } from './projects';
+export { fetchProjects, fetchProjectWithSlug } from './projects';
 export { fetchExperiences } from './experience';
 export { cfClient } from './cf-client';
+export { fetchEducations } from './education';
+export { fetchSkills } from './skill';

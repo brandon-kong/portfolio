@@ -1,4 +1,4 @@
-import { TypeExperience } from '@repo/utils/types';
+import { TypeEducation } from '@repo/utils/types';
 import { P } from '../typography';
 
 import { remark } from 'remark';
@@ -6,12 +6,19 @@ import html from 'remark-html';
 import Image from 'next/image';
 
 type BackgroundCardProps = {
-    experience: TypeExperience;
+    education: TypeEducation;
 };
 
-export default async function ExperienceCard({
-    experience: {
-        fields: { role, company, dateStarted, dateEnded, background },
+export default async function EducationCard({
+    education: {
+        fields: {
+            degree,
+            major,
+            company,
+            dateStarted,
+            graduationDate,
+            background,
+        },
     },
 }: BackgroundCardProps) {
     // get date in UTC 7:00 timezone
@@ -26,15 +33,15 @@ export default async function ExperienceCard({
 
     const companyName = (company as any).fields.name;
 
-    const dateEndedFormatted = dateEnded
-        ? new Date(dateEnded).toLocaleDateString('en-US', {
+    const graudationDateFormatted = graduationDate
+        ? new Date(graduationDate).toLocaleDateString('en-US', {
               month: 'short',
               year: 'numeric',
               timeZone: 'UTC',
           })
         : 'Present';
 
-    const dateRange = `${dateStartedFormatted} - ${dateEndedFormatted}`;
+    const dateRange = `${dateStartedFormatted} - ${graudationDateFormatted}`;
 
     const backgroundHtml = (
         await remark().use(html).process(background)
@@ -68,7 +75,7 @@ export default async function ExperienceCard({
                             />
                             <div>
                                 <P className={'text-md leading-[1.8]'}>
-                                    {role}
+                                    {degree} in {major}
                                 </P>
                                 <P className={'text-sm text-accent-foreground'}>
                                     {companyName}

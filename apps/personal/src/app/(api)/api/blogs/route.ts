@@ -1,4 +1,4 @@
-import { fetchBlogPosts } from '@repo/utils/blogs';
+import { fetchBlogPosts } from '@repo/utils/contentful';
 
 export async function GET() {
     const projects = await fetchBlogPosts();

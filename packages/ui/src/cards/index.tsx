@@ -58,3 +58,5 @@ export function LocationCard() {
 export { default as BlogPostCard } from './blogs';
 export { default as ProjectCard } from './project';
 export { default as ExperienceCard } from './experience';
+export { default as EducationCard } from './education';
+export { default as SkillCard } from './skill';

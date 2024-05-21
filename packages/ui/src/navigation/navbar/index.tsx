@@ -1,34 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { H4, P } from '../../typography';
-import Image from 'next/image';
-import { Home, Briefcase, User, PenTool, Mail, Menu } from 'react-feather';
-import { cn } from '@repo/utils';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Menu } from 'react-feather';
 
 import { motion } from 'framer-motion';
 import { NavbarNavigationButtons, SocialLinks } from '../navbuttons';
 import { Role } from './components';
-
-const links = [
-    {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/brandondkong/',
-        icon: faLinkedin,
-    },
-
-    {
-        name: 'Github',
-        href: 'https://www.github.com/brandon-kong/',
-        icon: faGithub,
-    },
-];
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
