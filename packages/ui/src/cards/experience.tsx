@@ -1,20 +1,26 @@
 import { TypeExperience } from '@repo/utils/types';
 import { P } from '../typography';
 
+import { remark } from 'remark';
+import html from 'remark-html';
+import Image from 'next/image';
+
 type BackgroundCardProps = {
     experience: TypeExperience;
 };
 
-export default function ExperienceCard({
+export default async function ExperienceCard({
     experience: {
         fields: { role, company, dateStarted, dateEnded, background },
     },
 }: BackgroundCardProps) {
+    // get date in UTC 7:00 timezone
     const dateStartedFormatted = new Date(dateStarted).toLocaleDateString(
         'en-US',
         {
             month: 'short',
             year: 'numeric',
+            timeZone: 'UTC',
         },
     );
 
@@ -28,6 +34,15 @@ export default function ExperienceCard({
         : 'Present';
 
     const dateRange = `${dateStartedFormatted} - ${dateEndedFormatted}`;
+
+    const backgroundHtml = (
+        await remark().use(html).process(background)
+    ).toString();
+
+    const companyLogo =
+        'https://' +
+        (company as any).fields.logo.fields.file.url.replace('//', '');
+
     return (
         <div
             className={
@@ -43,19 +58,28 @@ export default function ExperienceCard({
                     </div>
 
                     <div className={'flex flex-col gap-6 flex-1'}>
-                        <div>
-                            <P className={'text-md leading-[1.8]'}>{role}</P>
-                            <P className={'text-sm text-accent-foreground'}>
-                                {companyName}
-                            </P>
+                        <div className={'flex gap-4 items-center'}>
+                            <Image
+                                src={companyLogo}
+                                alt={companyName}
+                                width={40}
+                                height={40}
+                            />
+                            <div>
+                                <P className={'text-md leading-[1.8]'}>
+                                    {role}
+                                </P>
+                                <P className={'text-sm text-accent-foreground'}>
+                                    {companyName}
+                                </P>
+                            </div>
                         </div>
                         <div
                             className={
-                                'text-md leading-[1.8] text-accent-foreground'
+                                'text-md leading-[1.8] text-accent-foreground space-y-4'
                             }
-                        >
-                            {background}
-                        </div>
+                            dangerouslySetInnerHTML={{ __html: backgroundHtml }}
+                        />
                     </div>
                 </div>
             </div>

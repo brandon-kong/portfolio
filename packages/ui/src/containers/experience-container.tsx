@@ -1,7 +1,7 @@
+import React from 'react';
 import { fetchExperiences } from '@repo/utils/contentful';
 import { H3 } from '../typography';
 import ExperienceCard from '../cards/experience';
-import React from 'react';
 
 export default async function ExperienceContainer() {
     let experiences = await fetchExperiences();
