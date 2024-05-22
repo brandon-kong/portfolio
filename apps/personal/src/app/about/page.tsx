@@ -6,7 +6,6 @@ import {
     SkillsContainer,
 } from '@repo/ui/containers';
 import Image from 'next/image';
-import { SkillCard } from '@repo/ui/card';
 
 export default function About(): JSX.Element {
     return (

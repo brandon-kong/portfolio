@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { H3, H4, P } from '../typography';
+import { H4, P } from '../typography';
 
 import { TypeProject } from '@repo/utils/types';
 
@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({
     project: {
-        fields: { title, slug, description, background, coverImage },
+        fields: { title, slug, description, coverImage },
     },
 }: ProjectCardProps) {
     const imgUrl =

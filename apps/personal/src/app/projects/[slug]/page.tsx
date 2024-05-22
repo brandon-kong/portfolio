@@ -1,5 +1,4 @@
 import { H2, P } from '@repo/ui/typography';
-import { BlogsContainer } from '@repo/ui/containers';
 import { fetchProjectWithSlug } from '@repo/utils/contentful';
 
 import { notFound } from 'next/navigation';

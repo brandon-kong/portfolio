@@ -1,6 +1,5 @@
 import { TypeTestimonial } from '@repo/utils/types';
-import { H3, P } from '../../typography';
-import Image from 'next/image';
+import { P } from '../../typography';
 
 type BackgroundCardProps = {
     testimonial: TypeTestimonial;
