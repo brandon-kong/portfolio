@@ -5,6 +5,7 @@
   "exports": {
     "./button": "./src/button.tsx",
     "./card": "./src/cards/index.tsx",
+    "./project-cards": "./src/cards/projects/index.ts",
     "./code": "./src/code.tsx",
     "./typography": "./src/typography.tsx",
     "./providers": "./src/providers/index.ts",

@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({
     project: {
-        fields: { title, slug, background, coverImage },
+        fields: { title, slug, description, background, coverImage },
     },
 }: ProjectCardProps) {
     const imgUrl =
@@ -42,7 +42,7 @@ export default function ProjectCard({
                 <div className={'flex flex-col gap-1 w-full'}>
                     <H4 className={'font-medium'}>{title as string}</H4>
                     <P className={'text-md text-accent-foreground'}>
-                        {background as string}
+                        {description as string}
                     </P>
                 </div>
             </div>
