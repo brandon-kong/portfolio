@@ -14,6 +14,7 @@ export const fetchProjectWithSlug = async (
     const entries = (await cfClient.getEntries({
         content_type: 'project',
         'fields.slug': slug,
+        include: 3,
     })) as any;
 
     return entries.items[0] as TypeProject;

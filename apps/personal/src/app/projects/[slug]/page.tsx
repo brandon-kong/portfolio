@@ -6,7 +6,11 @@ import { notFound } from 'next/navigation';
 import { Button } from '@repo/ui/button';
 import Image from 'next/image';
 
-import { BackgroundProjectCard, ToolsCard } from '@repo/ui/project-cards';
+import {
+    BackgroundProjectCard,
+    TestimonialCard,
+    ToolsCard,
+} from '@repo/ui/project-cards';
 import React from 'react';
 
 type ProjectProps = {
@@ -22,8 +26,6 @@ export default async function Project({
     if (!project) {
         notFound();
     }
-
-    console.log(project.fields);
 
     const image =
         'https://' +
@@ -63,12 +65,16 @@ export default async function Project({
                 </React.Fragment>
             )}
 
+            {project.fields.testimonial && (
+                <React.Fragment>
+                    <TestimonialCard testimonial={project.fields.testimonial} />
+                </React.Fragment>
+            )}
+
             <BackgroundProjectCard
                 title={'Conclusion'}
                 background={project.fields.conclusion as any}
             />
-
-            <BlogsContainer noTitle />
         </div>
     );
 }
