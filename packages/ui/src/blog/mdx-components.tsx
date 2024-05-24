@@ -1,7 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 
-import { H1, H2, H3 } from '../typography';
+import { H1, H2, H3, P } from '../typography';
 import { cn } from '@repo/utils';
 
 // This file allows you to provide custom React components
@@ -14,17 +14,62 @@ export default function MDXComponents(
 ): MDXComponents {
     return {
         // Allows customizing built-in components, e.g. to add styling.
-        h1: ({ children }) => <H1>{children}</H1>,
-        h2: ({ children }) => <H2>{children}</H2>,
-        h3: ({ children }) => <H3>{children}</H3>,
-        img: (props) => (
-            <Image
-                sizes="100vw"
-                fill
-                className={cn(props.className, 'rounded-lg')}
-                {...(props as ImageProps)}
-            />
+        h1: ({ children, ...rest }) => (
+            <H1 className={'mb-4'} {...rest}>
+                {children}
+            </H1>
         ),
+        h2: ({ children, ...rest }) => (
+            <H2 className={'my-2'} {...rest}>
+                {children}
+            </H2>
+        ),
+        h3: ({ children }) => <H3>{children}</H3>,
+        p: ({ children }) => (
+            <P className={'text-accent-foreground'}>{children}</P>
+        ),
+        ul: ({ children }) => (
+            <ul className={'list-disc list-inside text-accent-foreground'}>
+                {children}
+            </ul>
+        ),
+
+        code: (props) => {
+            const { className, children } = props;
+
+            return (
+                <pre
+                    className={cn(
+                        className,
+                        'font-code p-4 bg-accent rounded-lg text-accent-foreground text-sm',
+                    )}
+                >
+                    {children}
+                </pre>
+            );
+        },
+
+        img: (props) => {
+            const { src, className, style, ...rest } = props;
+
+            if (typeof src !== 'string') {
+                return null;
+            }
+            const url = 'https://' + src.replace('//', '');
+
+            return (
+                <Image
+                    src={url}
+                    width={1000}
+                    height={600}
+                    className={cn(
+                        className,
+                        'w-full rounded-lg block max-h-[600px] h-auto relative my-4',
+                    )}
+                    {...(rest as any)}
+                />
+            );
+        },
         ...components,
     };
 }

@@ -74,6 +74,7 @@ const config: Omit<Config, 'content'> = {
             fontFamily: {
                 mono: ['var(--font-mono)', ...fontFamily.mono],
                 sans: ['var(--font-sans)', ...fontFamily.sans],
+                code: ['var(--font-code)', ...fontFamily.mono],
             },
             keyframes: {
                 'accordion-down': {

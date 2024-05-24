@@ -1,5 +1,10 @@
+import '@repo/ui/syntax-highlighter';
+
 import { H2, P } from '@repo/ui/typography';
 import { fetchBlogPostWithSlug } from '@repo/utils/contentful';
+
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
@@ -26,6 +31,13 @@ type ProjectProps = {
 type Props = {
     params: { slug: string };
     searchParams: { [key: string]: string | string[] | undefined };
+};
+
+const options = {
+    mdxOptions: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [rehypeHighlight as any],
+    },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -113,10 +125,11 @@ export default async function Blog({
                 className={'rounded-lg w-full max-h-[500px] object-cover'}
             />
 
-            <div className={'w-full space-y-8'}>
+            <div className={'w-full flex flex-col gap-8 relative'}>
                 <MDXRemote
                     source={blog.fields.content}
-                    components={MDXComponents}
+                    components={MDXComponents({})}
+                    options={options}
                 />
             </div>
         </div>

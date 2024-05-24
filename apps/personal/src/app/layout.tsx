@@ -2,12 +2,16 @@ import './globals.css';
 import '@repo/ui/globals.css';
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Source_Code_Pro } from 'next/font/google';
 import { ThemeProvider } from '@repo/ui/providers';
 import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
 import { cn } from '@repo/utils';
 
 const inter = Inter({ subsets: ['latin'] });
+const sourceCodePro = Source_Code_Pro({
+    subsets: ['latin'],
+    variable: '--font-code',
+});
 
 export const metadata: Metadata = {
     title: 'Create Turborepo',
@@ -21,7 +25,7 @@ export default function RootLayout({
 }): JSX.Element {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={cn(inter.className, sourceCodePro.variable)}>
                 <ThemeProvider>
                     <div className={'flex min-h-screen relative'}>
                         <Sidebar />

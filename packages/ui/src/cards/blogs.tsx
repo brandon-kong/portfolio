@@ -10,16 +10,17 @@ type BlogPostCardProps = {
 };
 
 export default function BlogPostCard({
+    blogPost,
     blogPost: {
-        fields: { title, description, publishDate, slug, featuredImage },
+        fields: { title, images, description, slug },
     },
 }: BlogPostCardProps) {
     const descriptionText = description as string;
     const imgUrl = (
-        ('https://' + (featuredImage as any).fields.file.url) as string
+        ('https://' + (images as any)[0].fields.file.url) as string
     ).replace('//', '');
 
-    const date = new Date(publishDate as string);
+    const date = new Date(blogPost.sys.updatedAt);
     const formattedPublishDate = date.toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
