@@ -12,7 +12,8 @@
     "./navigation": "./src/navigation/index.ts",
     "./containers": "./src/containers/index.ts",
     "./tooltip": "./src/tooltip.tsx",
-    "./globals.css": "./dist/globals.css"
+    "./globals.css": "./dist/globals.css",
+    "./blog/components": "./src/blog/mdx-components.tsx"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/globals.css -o ./dist/globals.css",
@@ -40,9 +41,13 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@repo/utils": "workspace:^",
+    "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.4",

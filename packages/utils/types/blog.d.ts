@@ -1,17 +1,15 @@
 import type { Asset, Entry, EntryFields, EntrySkeletonType } from 'contentful';
+import type { TypeAuthor } from './author';
 
 export interface TypeBlogPostFields {
     fields: {
         title: EntryFields.Symbol;
-        author: EntryFields.Symbol;
-        authorWebsite: EntryFields.Symbol;
+        author: TypeAuthor;
         description: EntryFields.Symbol;
-        featuredImage: Asset;
+        images: Asset[];
         category: 'Blog' | 'Case study' | 'Research' | 'Tutorial';
         slug: EntryFields.Symbol;
         content: EntryFields.Text;
-        published: EntryFields.Boolean;
-        publishDate: EntryFields.Date;
         tags?: EntryFields.Symbol[];
     };
 }
