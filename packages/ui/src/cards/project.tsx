@@ -25,7 +25,7 @@ export default function ProjectCard({
             >
                 <div
                     className={
-                        'aspect-[1.3/1] w-full relative bg-transparent rounded-xl overflow-hidden'
+                        'aspect-[1.3/1] w-full relative bg-transparent rounded-xl overflow-hidden shadow-md'
                     }
                 >
                     <Image
@@ -33,7 +33,7 @@ export default function ProjectCard({
                         alt={title}
                         fill={true}
                         className={
-                            'w-full h-full absolute group-hover:scale-110 transition-transform duration-500'
+                            ' w-full h-full absolute group-hover:scale-110 transition-transform duration-500'
                         }
                     />
                     {}

@@ -105,6 +105,7 @@ export default async function Blog({
                     <Link
                         target={'_blank'}
                         href={(blog.fields.author as any).fields.website}
+                        className={'w-fit'}
                     >
                         <Button className={'p-0 w-fit'} variant={'link'}>
                             {(blog.fields.author as any).fields.name}

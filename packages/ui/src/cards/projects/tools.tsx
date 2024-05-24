@@ -23,7 +23,7 @@ export default async function ToolsCard({
                         <H3>{title}</H3>
                     </div>
 
-                    <div className={'grid grid-cols-1 gap-1 flex-1'}>
+                    <div className={'grid grid-cols-1 gap-2 flex-1'}>
                         {skills.map((skill, index) => (
                             <SkillCard
                                 key={index}

@@ -67,7 +67,9 @@ export default async function Project({
                 alt={project.fields.title}
                 width={1000}
                 height={500}
-                className={'rounded-lg w-full'}
+                className={
+                    'rounded-lg w-full max-h-[500px] object-cover shadow-md'
+                }
             />
 
             <BackgroundProjectCard background={project.fields.background} />

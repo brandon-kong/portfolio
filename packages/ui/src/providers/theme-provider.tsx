@@ -8,7 +8,7 @@ type ThemeProviderProps = {
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
     return (
-        <ThmProvider defaultTheme="dark" enableSystem={false} attribute="class">
+        <ThmProvider defaultTheme="dark" enableSystem={true} attribute="class">
             {children}
         </ThmProvider>
     );

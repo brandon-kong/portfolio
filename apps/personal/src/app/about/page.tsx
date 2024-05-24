@@ -47,7 +47,7 @@ export default function About(): JSX.Element {
                         width={200}
                         height={200}
                         className={
-                            'rounded-full flex-shrink-0 self-start hidden sidebar-shown:flex'
+                            'shadow-lg rounded-full flex-shrink-0 self-start hidden sidebar-shown:flex'
                         }
                     />
                 </div>

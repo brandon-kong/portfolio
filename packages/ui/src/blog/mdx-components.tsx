@@ -3,6 +3,9 @@ import Image, { ImageProps } from 'next/image';
 
 import { H1, H2, H3, P } from '../typography';
 import { cn } from '@repo/utils';
+import { Button } from '../button';
+
+import { Clipboard } from 'react-feather';
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -38,14 +41,25 @@ export default function MDXComponents(
             const { className, children } = props;
 
             return (
-                <pre
-                    className={cn(
-                        className,
-                        'font-code p-4 bg-accent rounded-lg text-accent-foreground text-sm',
-                    )}
-                >
-                    {children}
-                </pre>
+                <div className={'relative group'}>
+                    <Button
+                        size={'icon'}
+                        variant={'secondary'}
+                        className={
+                            'absolute top-2 right-2 hidden sidebar-shown:flex transition-opacity opacity-0 group-hover:opacity-100'
+                        }
+                    >
+                        <Clipboard size={16} />
+                    </Button>
+                    <pre
+                        className={cn(
+                            className,
+                            'font-code p-6 bg-accent rounded-lg text-accent-foreground text-sm',
+                        )}
+                    >
+                        {children}
+                    </pre>
+                </div>
             );
         },
 

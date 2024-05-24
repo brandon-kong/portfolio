@@ -13,7 +13,7 @@ export default async function TestimonialCard({
     return (
         <div
             className={
-                'w-full h-full flex flex-row items-center justify-center gap-10 bg-accent rounded-lg p-8'
+                'shadow-md w-full h-full flex flex-row items-center justify-center gap-10 bg-accent rounded-lg p-8'
             }
         >
             <div className={'flex flex-col gap-2 w-full'}>

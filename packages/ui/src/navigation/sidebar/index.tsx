@@ -8,7 +8,7 @@ type SidebarProps = {
 
 export default function Sidebar({ baseUrl = '', selected }: SidebarProps) {
     return (
-        <aside className="z-[100] hidden sidebar-shown:flex flex-col justify-between fixed top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
+        <aside className=" z-[100] hidden sidebar-shown:flex flex-col justify-between fixed top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
             <div>
                 <Role />
 

@@ -77,7 +77,7 @@ export default function BlogPostCard({
 
             <div
                 className={
-                    'aspect-[1.333333/1] w-full sidebar-shown:w-[420px] relative bg-background-secondary-300 rounded-xl overflow-hidden'
+                    'aspect-[1.333333/1] w-full sidebar-shown:w-[420px] relative bg-background-secondary-300 rounded-xl overflow-hidden shadow-md'
                 }
             >
                 <Image

@@ -11,7 +11,9 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className={'flex-col flex sidebar-shown:hidden relative'}>
+        <div
+            className={'flex-col flex sidebar-shown:hidden relative shadow-md'}
+        >
             <aside className="z-[100] bg-background flex flex-row justify-center fixed py-3 px-6 icon-only:px-6 w-full h-navbar">
                 <Role />
 
@@ -39,7 +41,7 @@ export default function Navbar() {
                     visibility: { delay: open ? 0 : 0.2 },
                 }}
                 className={
-                    'fixed top-0 left-0 w-full h-full bg-background/50 z-[99]'
+                    'fixed top-0 left-0 w-full h-full bg-black/50 z-[99]'
                 }
                 onClick={() => setOpen(false)}
             >
