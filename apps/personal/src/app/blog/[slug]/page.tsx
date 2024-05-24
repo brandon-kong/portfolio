@@ -1,5 +1,8 @@
 import { H2, P } from '@repo/ui/typography';
-import { fetchProjectWithSlug } from '@repo/utils/contentful';
+import {
+    fetchBlogPostWithSlug,
+    fetchProjectWithSlug,
+} from '@repo/utils/contentful';
 
 import { notFound } from 'next/navigation';
 import { Button } from '@repo/ui/button';
@@ -20,18 +23,18 @@ type ProjectProps = {
         slug: string;
     };
 };
-export default async function Project({
+export default async function Blog({
     params: { slug },
 }: ProjectProps): Promise<JSX.Element> {
-    const project = await fetchProjectWithSlug(slug);
+    const blog = await fetchBlogPostWithSlug(slug);
 
-    if (!project) {
+    if (!blog) {
         notFound();
     }
 
     const image =
         'https://' +
-        (project.fields.coverImage as any).fields.file.url.replace('//', '');
+        (blog.fields.featuredImage as any).fields.file.url.replace('//', '');
 
     return (
         <div className={'space-y-20'}>
@@ -44,15 +47,18 @@ export default async function Project({
                     <ChevronLeft size={20} />
 
                     <P className={'text-sm'}>
-                        <Link href={'/projects'}>Back to list</Link>
+                        <Link href={'/blog'}>Back to list</Link>
                     </P>
                 </div>
             </div>
 
             <div className={'flex flex-col gap-6'}>
-                <H2> {project.fields.title}</H2>
+                <P className={'text-accent-foreground text-lg uppercase'}>
+                    {blog.fields.category}
+                </P>
+                <H2> {blog.fields.title}</H2>
                 <P className={'text-accent-foreground text-lg'}>
-                    {project.fields.description}
+                    {blog.fields.description}
                 </P>
                 <div className={'flex gap-4 mt-6'}>
                     <Button size={'lg'} variant={'secondary'}>
@@ -64,33 +70,13 @@ export default async function Project({
 
             <Image
                 src={image}
-                alt={project.fields.title}
+                alt={blog.fields.title}
                 width={1000}
                 height={500}
                 className={'rounded-lg w-full'}
             />
 
-            <BackgroundProjectCard background={project.fields.background} />
-
-            <hr />
-
-            {project.fields.tools && (
-                <React.Fragment>
-                    <ToolsCard skills={project.fields.tools as any} />
-                    <hr />
-                </React.Fragment>
-            )}
-
-            {project.fields.testimonial && (
-                <React.Fragment>
-                    <TestimonialCard testimonial={project.fields.testimonial} />
-                </React.Fragment>
-            )}
-
-            <BackgroundProjectCard
-                title={'Conclusion'}
-                background={project.fields.conclusion as any}
-            />
+            <BackgroundProjectCard background={blog.fields.description} />
         </div>
     );
 }

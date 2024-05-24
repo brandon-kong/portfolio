@@ -55,9 +55,12 @@ export default function About(): JSX.Element {
 
             <SkillsContainer />
 
-            <ExperiencesContainer />
+            <hr />
 
+            <ExperiencesContainer />
             <EducationsContainer />
+
+            <hr />
 
             <BlogsContainer title="Blog" limit={4} />
         </div>

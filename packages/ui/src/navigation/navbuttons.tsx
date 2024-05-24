@@ -15,30 +15,30 @@ import {
     TooltipTrigger,
 } from '../tooltip';
 
-const navItems = [
+const navItems = (baseUrl: string = '') => [
     {
         name: 'Homepage',
-        href: '/',
+        href: `${baseUrl}/`,
         icon: <Home size={20} />,
     },
     {
         name: 'Projects',
-        href: '/projects',
+        href: `${baseUrl}/projects`,
         icon: <Briefcase size={20} />,
     },
     {
         name: 'About',
-        href: '/about',
+        href: `${baseUrl}/about`,
         icon: <User size={20} />,
     },
     {
         name: 'Blog',
-        href: '/blog',
+        href: `${baseUrl}/blog`,
         icon: <PenTool size={20} />,
     },
     {
         name: 'Contact',
-        href: '/contact',
+        href: `${baseUrl}/contact`,
         icon: <Mail size={20} />,
     },
 ];
@@ -57,63 +57,72 @@ const links = [
     },
 ];
 
-export function FooterNavigationButtonContainer(): JSX.Element {
+type FooterNavigationButtonsProps = {
+    baseUrl?: string;
+    selected?: string;
+};
+
+export function FooterNavigationButtons({
+    baseUrl,
+    selected,
+}: FooterNavigationButtonsProps): JSX.Element {
+    const pathname = usePathname();
+
     return (
         <TooltipProvider>
-            <FooterNavigationButtons />
+            <nav className={'h-auto w-full flex-1'}>
+                <ul className="mt-8 flex flex-col items-center h-full gap-1 px-2">
+                    {navItems(baseUrl).map((item, index) => {
+                        const firstPath = pathname.split('/')[1];
+                        const isSelected = selected
+                            ? item.name.toLowerCase() === selected.toLowerCase()
+                            : pathname === item.href || firstPath === item.href;
+
+                        return (
+                            <li
+                                key={index}
+                                className="aspect-square icon-only:aspect-auto icon-only:w-full cursor-pointer"
+                            >
+                                <Tooltip delayDuration={0}>
+                                    <TooltipTrigger asChild>
+                                        <SidebarButton
+                                            active={isSelected}
+                                            icon={item.icon}
+                                            label={item.name}
+                                            href={item.href}
+                                        />
+                                    </TooltipTrigger>
+                                    <TooltipContent
+                                        className={'icon-only:hidden'}
+                                        side={'right'}
+                                    >
+                                        {item.name}
+                                    </TooltipContent>
+                                </Tooltip>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </nav>
         </TooltipProvider>
     );
 }
 
-export function FooterNavigationButtons(): JSX.Element {
-    const pathname = usePathname();
-
-    return (
-        <nav className={'h-auto w-full flex-1'}>
-            <ul className="mt-8 flex flex-col items-center h-full gap-1 px-2">
-                {navItems.map((item, index) => {
-                    const firstPath = '/' + pathname.split('/')[1];
-                    const isSelected =
-                        pathname === item.href || firstPath === item.href;
-                    return (
-                        <li
-                            key={index}
-                            className="aspect-square icon-only:aspect-auto icon-only:w-full cursor-pointer"
-                        >
-                            <Tooltip delayDuration={0}>
-                                <TooltipTrigger asChild>
-                                    <SidebarButton
-                                        active={isSelected}
-                                        icon={item.icon}
-                                        label={item.name}
-                                        href={item.href}
-                                    />
-                                </TooltipTrigger>
-                                <TooltipContent
-                                    className={'icon-only:hidden'}
-                                    side={'right'}
-                                >
-                                    {item.name}
-                                </TooltipContent>
-                            </Tooltip>
-                        </li>
-                    );
-                })}
-            </ul>
-        </nav>
-    );
-}
-
-export function NavbarNavigationButtons(): JSX.Element {
+export function NavbarNavigationButtons({
+    baseUrl,
+    selected,
+}: FooterNavigationButtonsProps): JSX.Element {
     const pathname = usePathname();
 
     return (
         <nav className={'h-auto w-full flex-1 pt-4'}>
             <ul className="flex flex-col items-center h-full gap-1 px-2">
-                {navItems.map((item, index) => {
+                {navItems(baseUrl).map((item, index) => {
                     const firstPath = '/' + pathname.split('/')[1];
-                    const isSelected =
-                        pathname === item.href || firstPath === item.href;
+                    const isSelected = selected
+                        ? item.name.toLowerCase() === selected.toLowerCase()
+                        : pathname === item.href || firstPath === item.href;
+
                     return (
                         <li key={index} className="w-full cursor-pointer">
                             <NavbarButton

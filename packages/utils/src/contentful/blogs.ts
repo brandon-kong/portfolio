@@ -7,3 +7,14 @@ export const fetchBlogPosts = async (): Promise<TypeBlogPost[]> => {
     });
     return entries.items;
 };
+
+export const fetchBlogPostWithSlug = async (
+    slug: string,
+): Promise<TypeBlogPost> => {
+    const entries = (await cfClient.getEntries({
+        content_type: 'blogPost',
+        'fields.slug': slug,
+    })) as any;
+
+    return entries.items[0] as TypeBlogPost;
+};

@@ -28,7 +28,7 @@ export default async function SkillCard({
     return (
         <div
             className={cn(
-                'w-full flex flex-row items-center justify-center gap-10 bg-accent',
+                'h-full w-full flex flex-row items-center justify-center gap-10 bg-accent',
 
                 isBottomLeft && 'rounded-bl-lg',
                 isBottomRight && 'rounded-br-lg',
@@ -42,7 +42,7 @@ export default async function SkillCard({
                     alt={name}
                     width={50}
                     height={50}
-                    className={'flex-shrink grayscale'}
+                    className={'flex-shrink brightness-0 invert opacity-40'}
                 />
 
                 <div className={'flex flex-col w-full'}>

@@ -1,20 +1,9 @@
 import type { Config } from 'tailwindcss';
+import sharedConfig from '@repo/tailwind-config';
 
-const config: Config = {
-    content: [
-        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
-    theme: {
-        extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-            },
-        },
-    },
-    plugins: [],
+const config: Pick<Config, 'presets' | 'content'> = {
+    content: ['./src/**/*.tsx', './src/**/*.ts'],
+    presets: [sharedConfig],
 };
+
 export default config;

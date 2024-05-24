@@ -1,7 +1,12 @@
-import { FooterNavigationButtonContainer, SocialLinks } from '../navbuttons';
+import { FooterNavigationButtons, SocialLinks } from '../navbuttons';
 import { Role } from './components';
 
-export default function Sidebar() {
+type SidebarProps = {
+    selected?: string;
+    baseUrl?: string;
+};
+
+export default function Sidebar({ baseUrl = '', selected }: SidebarProps) {
     return (
         <aside className="z-[100] hidden sidebar-shown:flex flex-col justify-between fixed top-0 left-0 py-10 px-4 icon-only:px-2 w-sidebar h-full">
             <div>
@@ -21,7 +26,10 @@ export default function Sidebar() {
                     </div>
                 </div>
 
-                <FooterNavigationButtonContainer />
+                <FooterNavigationButtons
+                    baseUrl={baseUrl}
+                    selected={selected}
+                />
             </div>
 
             <div className={'flex flex-col items-center icon-only:hidden'}>
