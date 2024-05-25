@@ -14,10 +14,13 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_VERCEL_URL || 'https://brandondkong.com',
+    ),
     title: 'Brandon Kong',
     description:
         'Brandon Kong is a software engineer with a passion for building products that make a difference.',
-    
+
     openGraph: {
         title: 'Brandon Kong',
         description:
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
                 alt: 'Abstract background image',
             },
         ],
-    }
+    },
 };
 
 export default function RootLayout({

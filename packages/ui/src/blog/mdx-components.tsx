@@ -1,21 +1,16 @@
-import type { MDXComponents } from 'mdx/types';
-import Image, { ImageProps } from 'next/image';
+import type { MDXComponents as MDX } from 'mdx/types';
+import NextImage from 'next/image';
 
 import { H1, H2, H3, P } from '../typography';
 import { cn, getNodeText } from '@repo/utils';
-import { Button, CopyButton } from '../button';
-
-import { Clipboard } from 'react-feather';
-import { renderToHTML } from 'next/dist/server/render';
+import { CopyButton } from '../button';
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including inline styles,
 // components from other libraries, and more.
 
-export default function MDXComponents(
-    components: MDXComponents,
-): MDXComponents {
+export default function MDXComponents(components: MDX): MDX {
     return {
         // Allows customizing built-in components, e.g. to add styling.
         h1: ({ children, ...rest }) => (
@@ -63,7 +58,7 @@ export default function MDXComponents(
         },
 
         img: (props) => {
-            const { src, className, style, ...rest } = props;
+            const { src, className, ...rest } = props;
 
             if (typeof src !== 'string') {
                 return null;
@@ -71,13 +66,12 @@ export default function MDXComponents(
             const url = 'https://' + src.replace('//', '');
 
             return (
-                <Image
+                <NextImage
                     src={url}
                     width={1000}
                     height={600}
                     priority
                     sizes="(max-height: 600px) 100vw, 1000px"
-                    style={{ height: 'auto' }}
                     className={cn(
                         className,
                         'h-auto shadow-md w-full rounded-lg block max-h-[600px] relative my-4',

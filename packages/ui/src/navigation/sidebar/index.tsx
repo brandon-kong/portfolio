@@ -1,4 +1,3 @@
-import { Moon } from 'react-feather';
 import {
     FooterNavigationButtons,
     SocialLinks,

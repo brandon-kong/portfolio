@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { H3, H4, P } from '../typography';
+import NextImage from 'next/image';
+import { H4, P } from '../typography';
 import { Button } from '../button';
 import { TypeBlogPost } from '@repo/utils/types';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default function BlogPostCard({
                     'aspect-[1.333333/1] w-full sidebar-shown:w-[420px] relative bg-background-secondary-300 rounded-xl overflow-hidden shadow-md'
                 }
             >
-                <Image
+                <NextImage
                     src={imgUrl}
                     alt={title}
                     fill
