@@ -120,7 +120,7 @@ export function NavbarNavigationButtons({
         <nav className={'h-auto w-full flex-1 pt-4'}>
             <ul className="flex flex-col items-center h-full gap-1 px-2">
                 {navItems(baseUrl).map((item, index) => {
-                    const firstPath = '/' + pathname.split('/')[0];
+                    const firstPath = '/' + pathname.split('/')[1];
                     const isSelected = selected
                         ? item.name.toLowerCase() === selected.toLowerCase()
                         : pathname === item.href || firstPath === item.href;

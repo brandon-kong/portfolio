@@ -67,7 +67,7 @@ export default async function ExperienceCard({
                                 height={40}
                                 sizes="40px"
                                 priority
-                                className={'w-10 h-10'}
+                                className={'w-10 h-auto flex-shrink-0'}
                             />
                             <div>
                                 <P className={'text-md leading-[1.8]'}>

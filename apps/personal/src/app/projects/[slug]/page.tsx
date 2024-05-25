@@ -15,12 +15,32 @@ import React from 'react';
 import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
 import { BackCard } from '@repo/ui/card';
+import { Metadata } from 'next';
 
 type ProjectProps = {
     params: {
         slug: string;
     };
 };
+
+type Props = {
+    params: { slug: string };
+    searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const fromContentful = await fetchProjectWithSlug(params.slug);
+
+    if (!fromContentful) {
+        notFound();
+    }
+
+    return {
+        title: fromContentful.fields.title + ' | Brandon Kong',
+        description: fromContentful.fields.description as string,
+    };
+}
+
 export default async function Project({
     params: { slug },
 }: ProjectProps): Promise<JSX.Element> {

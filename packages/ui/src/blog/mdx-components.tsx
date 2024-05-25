@@ -77,6 +77,7 @@ export default function MDXComponents(
                     height={600}
                     priority
                     sizes="(max-height: 600px) 100vw, 1000px"
+                    style={{ height: 'auto' }}
                     className={cn(
                         className,
                         'h-auto shadow-md w-full rounded-lg block max-h-[600px] relative my-4',
