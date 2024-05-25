@@ -2,7 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 
 import { H1, H2, H3, P } from '../typography';
-import { cn } from '@repo/utils';
+import { cn, getNodeText } from '@repo/utils';
 import { Button, CopyButton } from '../button';
 
 import { Clipboard } from 'react-feather';
@@ -45,7 +45,7 @@ export default function MDXComponents(
                 <div className={'relative group'}>
                     <CopyButton
                         variant={'secondary'}
-                        contentToCopy={String(children)}
+                        contentToCopy={getNodeText(children)}
                         className={
                             'absolute top-2 right-2 hidden sidebar-shown:flex transition-opacity opacity-0 group-hover:opacity-100'
                         }
