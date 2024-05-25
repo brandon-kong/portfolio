@@ -10,6 +10,7 @@ import React from 'react';
 import ConfettiExplosion from 'confetti-explosion-react';
 
 export default function EmailForm(): React.JSX.Element {
+    const [isExploding, setIsExploding] = React.useState(false);
     const [state, handleSubmit] = useForm(
         process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_FORM_ID as string,
     );
@@ -17,7 +18,11 @@ export default function EmailForm(): React.JSX.Element {
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         handleSubmit(e).then(() => {
+            setIsExploding(true);
             formRef.current?.reset();
+            setTimeout(() => {
+                setIsExploding(false);
+            }, 2000);
         });
     };
 
@@ -62,10 +67,10 @@ export default function EmailForm(): React.JSX.Element {
                 <Textarea required aria-required placeholder="Message" />
             </div>
 
-            {state.succeeded && (
+            {isExploding && (
                 <div
                     className={
-                        'absolute w-full h-full flex justify-center items-center overflow-hidden top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2'
+                        'pointer-events-none absolute w-full h-full flex justify-center items-center overflow-hidden top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2'
                     }
                 >
                     <ConfettiExplosion width={3200} height={3200} />

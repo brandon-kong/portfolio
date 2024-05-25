@@ -14,7 +14,6 @@ import Image from 'next/image';
 
 import React from 'react';
 
-import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
 
 import readingTime from 'reading-time';
@@ -49,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: fromContentful.fields.title + ' | Brandon Kong',
+        title: fromContentful.fields.title + ': Brandon Kong',
         description: fromContentful.fields.description as string,
     };
 }

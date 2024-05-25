@@ -1,5 +1,4 @@
 import { H2, P } from '@repo/ui/typography';
-import { ProjectsContainer } from '@repo/ui/containers';
 import { EmailForm } from '@repo/ui/forms';
 
 export default function Contact(): JSX.Element {

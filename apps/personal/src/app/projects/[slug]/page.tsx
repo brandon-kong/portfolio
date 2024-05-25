@@ -12,7 +12,6 @@ import {
 } from '@repo/ui/project-cards';
 import React from 'react';
 
-import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
 import { BackCard } from '@repo/ui/card';
 import { Metadata } from 'next';
@@ -36,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: fromContentful.fields.title + ' | Brandon Kong',
+        title: fromContentful.fields.title + ': Brandon Kong',
         description: fromContentful.fields.description as string,
     };
 }
