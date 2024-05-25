@@ -50,6 +50,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: fromContentful.fields.title + ': Brandon Kong',
         description: fromContentful.fields.description as string,
+        openGraph: {
+            images: [
+                {
+                    url:
+                        'https://' +
+                        (
+                            fromContentful.fields.images as any
+                        )[0].fields.file.url.replace('//', ''),
+                    width: 1200,
+                    height: 630,
+                    alt: fromContentful.fields.title,
+                },
+            ],
+        },
     };
 }
 
