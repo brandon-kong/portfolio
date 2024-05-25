@@ -14,6 +14,8 @@ export interface TypeProjectFields {
         testimonial?: TypeTestimonial;
         slug: EntryFields.Symbol;
         conclusion?: EntryFields.Text;
+        source?: EntryFields.Symbol;
+        liveDemo?: EntryFields.Symbol;
     };
 }
 

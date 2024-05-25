@@ -63,12 +63,32 @@ export default async function Project({
                 <P className={'text-accent-foreground text-lg'}>
                     {project.fields.description}
                 </P>
-                <div className={'flex gap-4 mt-6'}>
-                    <Button size={'lg'} variant={'secondary'}>
-                        View source
-                    </Button>
-                    <Button size={'lg'}>View Live</Button>
-                </div>
+
+                {(project.fields.source || project.fields.liveDemo) && (
+                    <div className={'flex gap-4 mt-6'}>
+                        {project.fields.source && (
+                            <Link
+                                target={'_blank'}
+                                href={project.fields.source}
+                            >
+                                <Button size={'lg'} variant={'secondary'}>
+                                    View source
+                                </Button>
+                            </Link>
+                        )}
+
+                        {project.fields.liveDemo && (
+                            <Link
+                                target={'_blank'}
+                                href={project.fields.liveDemo}
+                            >
+                                <Button size={'lg'} variant={'secondary'}>
+                                    View source
+                                </Button>
+                            </Link>
+                        )}
+                    </div>
+                )}
             </div>
 
             <Image
@@ -77,13 +97,18 @@ export default async function Project({
                 width={1000}
                 height={500}
                 className={
-                    'rounded-lg w-full max-h-[500px] object-cover shadow-md'
+                    'rounded-lg w-full h-auto max-h-[500px] object-cover shadow-md'
                 }
             />
 
-            <BackgroundProjectCard background={project.fields.background} />
-
-            <hr />
+            {project.fields.background && (
+                <React.Fragment>
+                    <BackgroundProjectCard
+                        background={project.fields.background}
+                    />
+                    <hr />
+                </React.Fragment>
+            )}
 
             {project.fields.tools && (
                 <React.Fragment>

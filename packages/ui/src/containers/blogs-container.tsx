@@ -2,6 +2,7 @@ import { fetchBlogPosts } from '@repo/utils/contentful';
 import { H3 } from '../typography';
 import { Button } from '../button';
 import BlogPostCard from '../cards/blogs';
+import Link from 'next/link';
 
 type BlogPostsContainerProps = {
     noTitle?: boolean;
@@ -24,12 +25,14 @@ export default async function BlogPostContainer({
         <div className={'space-y-8'}>
             <div className={'space-y-2'}>
                 {limit > 0 && (
-                    <Button
-                        variant={'link'}
-                        className={'p-0 text-accent-foreground h-fit'}
-                    >
-                        View All
-                    </Button>
+                    <Link href={'/blog'}>
+                        <Button
+                            variant={'link'}
+                            className={'p-0 text-accent-foreground h-fit'}
+                        >
+                            View All
+                        </Button>
+                    </Link>
                 )}
                 {!noTitle && <H3>{title}</H3>}
             </div>

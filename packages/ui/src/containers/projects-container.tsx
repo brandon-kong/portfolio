@@ -2,6 +2,7 @@ import { fetchProjects } from '@repo/utils/contentful';
 import ProjectCard from '../cards/project';
 import { H3 } from '../typography';
 import { Button } from '../button';
+import Link from 'next/link';
 
 type ProjectsContainerProps = {
     noTitle?: boolean;
@@ -24,12 +25,14 @@ export default async function ProjectsContainer({
         <div className={'space-y-8'}>
             <div className={'space-y-2'}>
                 {limit > 0 && (
-                    <Button
-                        variant={'link'}
-                        className={'p-0 text-accent-foreground h-fit'}
-                    >
-                        View All
-                    </Button>
+                    <Link href={'/projects'}>
+                        <Button
+                            variant={'link'}
+                            className={'p-0 text-accent-foreground h-fit'}
+                        >
+                            View All
+                        </Button>
+                    </Link>
                 )}
                 {!noTitle && <H3>{title}</H3>}
             </div>
