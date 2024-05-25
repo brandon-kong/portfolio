@@ -14,7 +14,8 @@
     "./tooltip": "./src/tooltip.tsx",
     "./globals.css": "./dist/globals.css",
     "./blog/components": "./src/blog/mdx-components.tsx",
-    "./syntax-highlighter": "./src/syntax-highlighter.css"
+    "./syntax-highlighter": "./src/syntax-highlighter.css",
+    "./forms": "./src/forms/index.ts"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/globals.css ./src/syntax-highlighter.css -o ./dist/globals.css",
@@ -40,11 +41,14 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
+    "@google-cloud/recaptcha-enterprise": "^5.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.3",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@repo/utils": "workspace:^",
@@ -56,6 +60,7 @@
     "next": "^14.2.3",
     "next-themes": "^0.3.0",
     "react-feather": "^2.0.10",
+    "react-google-recaptcha": "^3.1.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^2.3.0",
