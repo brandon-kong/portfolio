@@ -25,7 +25,7 @@ export default function EmailForm(): React.JSX.Element {
         <form
             ref={formRef}
             onSubmit={onSubmit}
-            className={'flex flex-col gap-4 relative'}
+            className={'flex flex-col gap-4'}
         >
             {state.errors && (
                 <div
