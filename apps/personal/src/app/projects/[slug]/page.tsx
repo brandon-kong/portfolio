@@ -12,7 +12,6 @@ import {
 } from '@repo/ui/project-cards';
 import React from 'react';
 
-import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
 import { BackCard } from '@repo/ui/card';
 import { Metadata } from 'next';

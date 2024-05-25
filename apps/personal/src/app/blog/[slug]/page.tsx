@@ -14,7 +14,6 @@ import Image from 'next/image';
 
 import React from 'react';
 
-import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
 
 import readingTime from 'reading-time';
