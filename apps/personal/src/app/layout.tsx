@@ -54,7 +54,7 @@ export default function RootLayout({
 
                         <main
                             className={cn(
-                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4 pr-4 pl-4 pb-4 sidebar-shown:pl-sidebar rounded-lg min-h-screen overflow-y-hidden',
+                                'flex-1 pt-navbar [&&]:sidebar-shown:pt-4  pb-4 sidebar-shown:pl-sidebar sidebar-shown:pr-4 rounded-lg min-h-screen overflow-y-hidden',
                             )}
                         >
                             <div
