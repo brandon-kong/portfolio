@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         description:
             'Brandon Kong is a software engineer with a passion for building products that make a difference.',
         type: 'website',
-        url: 'https://brandonkong.dev',
+        url: 'https://brandondkong.com',
         siteName: 'Brandon Kong',
         images: [
             {
