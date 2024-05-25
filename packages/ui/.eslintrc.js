@@ -7,4 +7,8 @@ module.exports = {
     project: "./tsconfig.lint.json",
     tsconfigRootDir: __dirname,
   },
+  "env": {
+    "node": true,
+    "commonjs": true
+  }
 };
