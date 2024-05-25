@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: fromContentful.fields.title + ' | Brandon Kong',
+        title: fromContentful.fields.title + ': Brandon Kong',
         description: fromContentful.fields.description as string,
     };
 }

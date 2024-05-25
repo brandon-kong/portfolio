@@ -3,6 +3,13 @@ import { LocationCard } from '@repo/ui/card';
 import { ProjectsContainer, BlogsContainer } from '@repo/ui/containers';
 import { Button } from '@repo/ui/button';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Brandon Kong',
+    description:
+        'Brandon Kong is a software engineer with a passion for building products that make a difference.',
+};
 
 export default function Home(): JSX.Element {
     return (
