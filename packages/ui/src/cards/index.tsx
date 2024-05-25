@@ -60,3 +60,4 @@ export { default as ProjectCard } from './project';
 export { default as ExperienceCard } from './experience';
 export { default as EducationCard } from './education';
 export { default as SkillCard } from './skill';
+export { default as BackCard } from './back';

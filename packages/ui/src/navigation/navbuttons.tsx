@@ -1,8 +1,8 @@
 'use client';
 
-import { Home, Briefcase, User, PenTool, Mail } from 'react-feather';
+import { Home, Briefcase, User, PenTool, Mail, Moon } from 'react-feather';
 import { usePathname } from 'next/navigation';
-import { NavbarButton, SidebarButton } from '../button';
+import { Button, NavbarButton, SidebarButton } from '../button';
 import Link from 'next/link';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -14,6 +14,8 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '../tooltip';
+
+import { useTheme } from 'next-themes';
 
 const navItems = (baseUrl: string = '') => [
     {
@@ -171,5 +173,29 @@ export function SocialLinks({
                 );
             })}
         </div>
+    );
+}
+
+export function ThemeToggleButton(): JSX.Element {
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <TooltipProvider>
+            <Tooltip delayDuration={0}>
+                <TooltipTrigger asChild>
+                    <Button
+                        onClick={() =>
+                            setTheme(theme === 'dark' ? 'light' : 'dark')
+                        }
+                        variant={'ghost'}
+                        size={'icon'}
+                        className="w-8 h-8 rounded-full aspect-square p-1 bg-transparent transition-colors duration-300 hover:bg-background-secondary-900"
+                    >
+                        <Moon size={24} className={'w-6 h-6'} />
+                    </Button>
+                </TooltipTrigger>
+                <TooltipContent side={'right'}>Toggle Theme</TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
     );
 }

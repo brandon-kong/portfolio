@@ -21,6 +21,7 @@ import readingTime from 'reading-time';
 
 import { Metadata } from 'next';
 import MDXComponents from '@repo/ui/blog/components';
+import { BackCard } from '@repo/ui/card';
 
 type ProjectProps = {
     params: {
@@ -79,19 +80,7 @@ export default async function Blog({
 
     return (
         <div className={'space-y-20'}>
-            <div className={'flex gap-6 pb-6 border-b border-accent'}>
-                <div
-                    className={
-                        'transition-colors duration-300 flex gap-4 items-center text-accent-foreground hover:text-foreground cursor-pointer'
-                    }
-                >
-                    <ChevronLeft size={20} />
-
-                    <P className={'text-sm'}>
-                        <Link href={'/blog'}>Back to list</Link>
-                    </P>
-                </div>
-            </div>
+            <BackCard href={'/blog'} />
 
             <div className={'flex flex-col gap-6'}>
                 <P className={'text-accent-foreground text-lg uppercase'}>
@@ -122,8 +111,12 @@ export default async function Blog({
                 src={image}
                 alt={blog.fields.title}
                 width={1000}
-                height={500}
-                className={'rounded-lg w-full max-h-[500px] object-cover'}
+                height={1000}
+                priority
+                sizes={'1000px'}
+                className={
+                    'h-auto shadow-md rounded-lg w-full max-h-[500px] object-cover'
+                }
             />
 
             <div className={'w-full flex flex-col gap-8 relative'}>

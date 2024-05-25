@@ -2,6 +2,7 @@ import { H2, P } from '@repo/ui/typography';
 import { LocationCard } from '@repo/ui/card';
 import { ProjectsContainer, BlogsContainer } from '@repo/ui/containers';
 import { Button } from '@repo/ui/button';
+import Link from 'next/link';
 
 export default function Home(): JSX.Element {
     return (
@@ -27,9 +28,11 @@ export default function Home(): JSX.Element {
                 </div>
 
                 <div className={'flex items-center gap-4'}>
-                    <Button variant={'secondary'} size={'lg'}>
-                        About Me
-                    </Button>
+                    <Link href={'/about'}>
+                        <Button variant={'secondary'} size={'lg'}>
+                            About Me
+                        </Button>
+                    </Link>
                     <Button variant={'outline'} size={'lg'}>
                         Projects
                     </Button>

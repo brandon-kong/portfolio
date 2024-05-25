@@ -32,6 +32,8 @@ export default function ProjectCard({
                         src={imgUrl}
                         alt={title}
                         fill={true}
+                        sizes="400px"
+                        priority
                         className={
                             ' w-full h-full absolute group-hover:scale-110 transition-transform duration-500'
                         }

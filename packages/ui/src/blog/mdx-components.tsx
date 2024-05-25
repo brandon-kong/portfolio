@@ -3,9 +3,10 @@ import Image, { ImageProps } from 'next/image';
 
 import { H1, H2, H3, P } from '../typography';
 import { cn } from '@repo/utils';
-import { Button } from '../button';
+import { Button, CopyButton } from '../button';
 
 import { Clipboard } from 'react-feather';
+import { renderToHTML } from 'next/dist/server/render';
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -42,19 +43,17 @@ export default function MDXComponents(
 
             return (
                 <div className={'relative group'}>
-                    <Button
-                        size={'icon'}
+                    <CopyButton
                         variant={'secondary'}
+                        contentToCopy={String(children)}
                         className={
                             'absolute top-2 right-2 hidden sidebar-shown:flex transition-opacity opacity-0 group-hover:opacity-100'
                         }
-                    >
-                        <Clipboard size={16} />
-                    </Button>
+                    />
                     <pre
                         className={cn(
                             className,
-                            'font-code p-6 bg-accent rounded-lg text-accent-foreground text-sm',
+                            'font-code p-6 shadow-md bg-accent rounded-lg text-accent-foreground text-sm',
                         )}
                     >
                         {children}
@@ -76,14 +75,43 @@ export default function MDXComponents(
                     src={url}
                     width={1000}
                     height={600}
+                    priority
+                    sizes="(max-height: 600px) 100vw, 1000px"
                     className={cn(
                         className,
-                        'w-full rounded-lg block max-h-[600px] h-auto relative my-4',
+                        'h-auto shadow-md w-full rounded-lg block max-h-[600px] relative my-4',
                     )}
                     {...(rest as any)}
                 />
             );
         },
+
+        table: ({ children }) => (
+            <table
+                className={
+                    'border-accent text-accent-foreground my-6 w-full rounded-sm'
+                }
+            >
+                {children}
+            </table>
+        ),
+        thead: ({ children }) => <thead>{children}</thead>,
+        tr: ({ children }) => (
+            <tr className={'border-accent even:bg-accent hover:bg-accent/50'}>
+                {children}
+            </tr>
+        ),
+        td: ({ children }) => (
+            <td className={' p-4 border-t-2 border-accent'}>{children}</td>
+        ),
+        th: ({ children }) => <th className={'p-4 text-left'}>{children}</th>,
+
+        blockquote: ({ children }) => (
+            <blockquote className={'border-l-4 border-primary p-4 my-6'}>
+                {children}
+            </blockquote>
+        ),
+
         ...components,
     };
 }

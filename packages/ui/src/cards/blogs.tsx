@@ -53,14 +53,16 @@ export default function BlogPostCard({
                                 ? descriptionText.slice(0, 150) + '...'
                                 : description}
                         </P>
-                        <Button
-                            size={'default'}
-                            variant={'secondary'}
-                            className={'w-full sidebar-shown:w-fit mt-4 group'}
+                        <Link
+                            href={`/blog/${slug}`}
+                            className={'flex items-center gap-1'}
                         >
-                            <Link
-                                href={`/blog/${slug}`}
-                                className={'flex items-center gap-1'}
+                            <Button
+                                size={'default'}
+                                variant={'secondary'}
+                                className={
+                                    'w-full sidebar-shown:w-fit mt-4 group'
+                                }
                             >
                                 Read more about this blog
                                 <ChevronRight
@@ -69,8 +71,8 @@ export default function BlogPostCard({
                                     }
                                     size={15}
                                 />
-                            </Link>
-                        </Button>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -84,6 +86,7 @@ export default function BlogPostCard({
                     src={imgUrl}
                     alt={title}
                     fill
+                    sizes="400px"
                     className={
                         'w-full h-full absolute object-cover transition-transform duration-500'
                     }

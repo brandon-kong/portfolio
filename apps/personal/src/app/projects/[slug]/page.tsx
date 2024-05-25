@@ -14,6 +14,7 @@ import React from 'react';
 
 import { ChevronLeft } from 'react-feather';
 import Link from 'next/link';
+import { BackCard } from '@repo/ui/card';
 
 type ProjectProps = {
     params: {
@@ -35,19 +36,7 @@ export default async function Project({
 
     return (
         <div className={'space-y-20'}>
-            <div className={'flex gap-6 pb-6 border-b border-accent'}>
-                <div
-                    className={
-                        'transition-colors duration-300 flex gap-4 items-center text-accent-foreground hover:text-foreground cursor-pointer'
-                    }
-                >
-                    <ChevronLeft size={20} />
-
-                    <P className={'text-sm'}>
-                        <Link href={'/projects'}>Back to list</Link>
-                    </P>
-                </div>
-            </div>
+            <BackCard href={'/projects'} />
 
             <div className={'flex flex-col gap-6'}>
                 <H2> {project.fields.title}</H2>

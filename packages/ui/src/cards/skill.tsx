@@ -40,10 +40,12 @@ export default async function SkillCard({
                 <Image
                     src={img}
                     alt={name}
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
+                    priority
+                    sizes="40px"
                     className={
-                        'flex-shrink brightness-0 dark:invert opacity-40'
+                        'w-10 h-10 flex-shrink brightness-0 dark:invert opacity-40'
                     }
                 />
 
