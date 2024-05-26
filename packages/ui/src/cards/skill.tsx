@@ -37,17 +37,21 @@ export default async function SkillCard({
             )}
         >
             <div className={'flex items-center gap-4 w-full p-4'}>
-                <Image
-                    src={img}
-                    alt={name}
-                    width={40}
-                    height={40}
-                    priority
-                    sizes="40px"
-                    className={
-                        'w-10 h-10 flex-shrink brightness-0 dark:invert opacity-40'
-                    }
-                />
+                {img ? (
+                    <Image
+                        src={img}
+                        alt={name}
+                        width={40}
+                        height={40}
+                        priority
+                        sizes="40px"
+                        className={
+                            'w-10 h-10 aspect-square object-contain flex-shrink brightness-0 dark:invert opacity-40'
+                        }
+                    />
+                ) : (
+                    <div className={'h-10 w-10 flex-shrink'} />
+                )}
 
                 <div className={'flex flex-col w-full'}>
                     <P className={'font-medium'}>{name}</P>
