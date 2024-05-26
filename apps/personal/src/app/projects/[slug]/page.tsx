@@ -105,27 +105,32 @@ export default async function Project({
                     <BackgroundProjectCard
                         background={project.fields.background}
                     />
-                    <hr />
                 </React.Fragment>
             )}
 
             {project.fields.tools && (
                 <React.Fragment>
-                    <ToolsCard skills={project.fields.tools as any} />
                     <hr />
+                    <ToolsCard skills={project.fields.tools as any} />
                 </React.Fragment>
             )}
 
             {project.fields.testimonial && (
                 <React.Fragment>
+                    <hr />
                     <TestimonialCard testimonial={project.fields.testimonial} />
                 </React.Fragment>
             )}
 
-            <BackgroundProjectCard
-                title={'Conclusion'}
-                background={project.fields.conclusion as any}
-            />
+            {project.fields.conclusion && (
+                <React.Fragment>
+                    <hr />
+                    <BackgroundProjectCard
+                        title={'Conclusion'}
+                        background={project.fields.conclusion as any}
+                    />
+                </React.Fragment>
+            )}
         </div>
     );
 }
