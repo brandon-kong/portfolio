@@ -36,17 +36,19 @@ export default async function ConnectCard({
         >
             <div className={'flex items-center gap-4 w-full p-4'}>
                 {icon ? (
-                      <FontAwesomeIcon
-                      icon={icon}
-                      className="w-6 h-6 text-background-secondary-500 group-hover:text-background-secondary-50 duration-300 aspect-square"
-                  />
+                    <FontAwesomeIcon
+                        icon={icon}
+                        className="w-6 h-6 text-background-secondary-500 group-hover:text-background-secondary-50 duration-300 aspect-square"
+                    />
                 ) : (
                     <div className={'h-10 w-10 flex-shrink'} />
                 )}
 
                 <div className={'flex flex-col w-full'}>
                     <P className={'font-medium'}>{username}</P>
-                    <P className={'text-sm text-accent-foreground'}>{platform}</P>
+                    <P className={'text-sm text-accent-foreground'}>
+                        {platform}
+                    </P>
                 </div>
             </div>
         </div>

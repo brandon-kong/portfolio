@@ -7,7 +7,7 @@ import { ThemeProvider } from '@repo/ui/providers';
 import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
 import { cn } from '@repo/utils';
 
-export const revalidate = 3600
+export const revalidate = 3600;
 
 const inter = Inter({ subsets: ['latin'] });
 const sourceCodePro = Source_Code_Pro({

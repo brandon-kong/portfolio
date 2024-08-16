@@ -28,21 +28,14 @@ export default function Contact(): JSX.Element {
                 </P>
 
                 <hr />
-                
-                <H3>
-                    Let&apos;s connect!
-                </H3>
+
+                <H3>Let&apos;s connect!</H3>
 
                 <div className={'grid gap-4 md:grid-cols-2'}>
                     {connections.map((connection, index) => (
-                        <ConnectCard
-                            key={index}
-                            {...connection}
-                        />
+                        <ConnectCard key={index} {...connection} />
                     ))}
                 </div>
-              
-
             </div>
 
             <EmailForm />
