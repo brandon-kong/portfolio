@@ -40,9 +40,11 @@ export default function Home(): JSX.Element {
                             About Me
                         </Button>
                     </Link>
-                    <Button variant={'outline'} size={'lg'}>
-                        Projects
-                    </Button>
+                    <Link href={'/projects'}>
+                        <Button variant={'outline'} size={'lg'}>
+                            Projects
+                        </Button>
+                    </Link>
                 </div>
             </div>
 
