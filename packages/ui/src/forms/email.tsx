@@ -80,7 +80,7 @@ export default function EmailForm(): React.JSX.Element {
             <Button
                 disabled={state.submitting}
                 size={'lg'}
-                variant={'secondary'}
+                variant={'default'}
                 className={'w-full my-4'}
                 type="submit"
             >

@@ -108,6 +108,14 @@ export default async function Project({
                 </React.Fragment>
             )}
 
+            {project.fields.goals && (
+                <React.Fragment>
+                    <hr />
+                    <ToolsCard skills={project.fields.tools as any} />
+                </React.Fragment>
+            )}
+            
+
             {project.fields.tools && (
                 <React.Fragment>
                     <hr />

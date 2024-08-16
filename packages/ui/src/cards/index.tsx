@@ -61,3 +61,4 @@ export { default as ExperienceCard } from './experience';
 export { default as EducationCard } from './education';
 export { default as SkillCard } from './skill';
 export { default as BackCard } from './back';
+export { default as ConnectCard } from './connect';
