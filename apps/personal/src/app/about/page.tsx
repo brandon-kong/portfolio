@@ -7,8 +7,6 @@ import {
 } from '@repo/ui/containers';
 import Image from 'next/image';
 import { fetchSkills } from '@repo/utils/contentful';
-import SkillContainerClient from '../../components/skill-container';
-import { Suspense } from 'react';
 
 export default async function About(): Promise<JSX.Element> {
     let skills = await fetchSkills();

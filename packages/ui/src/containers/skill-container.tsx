@@ -6,7 +6,6 @@ import { SkillCard } from '../cards';
 import { TypeSkill } from '@repo/utils/types';
 import { cn } from '@repo/utils';
 import { Button } from '../button';
-import { fetchSkills } from '@repo/utils/contentful';
 
 type SkillContainerProps = {
     skills?: TypeSkill[];
