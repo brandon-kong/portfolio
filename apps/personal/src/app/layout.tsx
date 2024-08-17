@@ -6,6 +6,7 @@ import { Inter, Source_Code_Pro } from 'next/font/google';
 import { ThemeProvider } from '@repo/ui/providers';
 import { Sidebar, Footer, Navbar } from '@repo/ui/navigation';
 import { cn } from '@repo/utils';
+import { Analytics } from '@vercel/analytics/react';
 
 export const revalidate = 3600;
 
@@ -77,6 +78,8 @@ export default function RootLayout({
                         </main>
                     </div>
                 </ThemeProvider>
+
+                <Analytics />
             </body>
         </html>
     );
