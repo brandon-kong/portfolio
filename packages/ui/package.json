@@ -15,7 +15,8 @@
     "./globals.css": "./dist/globals.css",
     "./blog/components": "./src/blog/mdx-components.tsx",
     "./syntax-highlighter": "./src/syntax-highlighter.css",
-    "./forms": "./src/forms/index.ts"
+    "./forms": "./src/forms/index.ts",
+    "./icons": "./src/icons/index.ts"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/globals.css ./src/syntax-highlighter.css -o ./dist/globals.css",

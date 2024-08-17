@@ -1,3 +1,5 @@
+'use server';
+
 import { ProjectEntrySkeleton, TypeProject } from '../../types/project';
 import { cfClient } from './cf-client';
 

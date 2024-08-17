@@ -1,3 +1,5 @@
+'use server';
+
 import { EducationEntrySkeleton, TypeEducation } from '../../types/education';
 import { cfClient } from './cf-client';
 

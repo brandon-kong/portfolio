@@ -10,6 +10,7 @@ type BackgroundCardProps = {
     isBottomRight?: boolean;
     isTopLeft?: boolean;
     isTopRight?: boolean;
+    className?: string;
 };
 
 export default async function SkillCard({
@@ -20,6 +21,8 @@ export default async function SkillCard({
     isBottomRight = false,
     isTopLeft = false,
     isTopRight = false,
+
+    className,
 }: BackgroundCardProps) {
     const img = image
         ? 'https://' + (image as any).fields.file.url.replace('//', '')
@@ -34,6 +37,8 @@ export default async function SkillCard({
                 isBottomRight && 'rounded-br-lg',
                 isTopLeft && 'rounded-tl-lg',
                 isTopRight && 'rounded-tr-lg',
+
+                className,
             )}
         >
             <div className={'flex items-center gap-4 w-full p-4'}>

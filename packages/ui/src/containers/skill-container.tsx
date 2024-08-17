@@ -1,46 +1,67 @@
-import React from 'react';
-import { fetchSkills } from '@repo/utils/contentful';
+'use client';
+
+import React, { Suspense, useMemo } from 'react';
 import { H3 } from '../typography';
 import { SkillCard } from '../cards';
+import { TypeSkill } from '@repo/utils/types';
+import { cn } from '@repo/utils';
+import { Button } from '../button';
+import { fetchSkills } from '@repo/utils/contentful';
 
-const isBottomLeft = (list: any[], index: number) => {
-    const total = list.length;
-    if (total % 2 === 0) {
-        return index === total - 2;
-    } else {
-        return index === total - 1;
-    }
+type SkillContainerProps = {
+    skills?: TypeSkill[];
 };
 
-const isBottomRight = (list: any[], index: number) => {
-    const total = list.length;
-    if (total % 2 === 0) {
-        return index === total - 1;
-    } else {
-        return index === total - 1 || index === total - 2;
-    }
-};
+export default function SkillContainerClient({ skills }: SkillContainerProps) {
+    const [expanded, setExpanded] = React.useState(false);
 
-export default async function SkillContainer() {
-    let skills = await fetchSkills();
+    const skillSet = useMemo(() => {
+        if (skills) {
+            return expanded ? skills : skills.slice(0, 8);
+        }
+
+        return [];
+    }, [expanded]);
 
     return (
         <div className={'space-y-8'}>
             <H3>Skills</H3>
 
-            <ul className={'grid grid-cols-1 sidebar-shown:grid-cols-2 gap-2'}>
-                {skills.map((skill, index) => (
-                    <li key={index}>
-                        <SkillCard
-                            skill={skill}
-                            isTopLeft={index === 0}
-                            isTopRight={index === 1}
-                            isBottomLeft={isBottomLeft(skills, index)}
-                            isBottomRight={isBottomRight(skills, index)}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <Suspense fallback={<div>Loading...</div>}>
+                <ul
+                    className={cn(
+                        'grid grid-cols-1 sidebar-shown:grid-cols-2 gap-2 rounded-lg overflow-clip',
+                        // add opacity gradient to the bottom
+                        !expanded && 'gradient-overlay',
+                    )}
+                >
+                    {skillSet?.map((skill, index) => (
+                        <li key={index}>
+                            <SkillCard
+                                skill={skill}
+                                isBottomRight={index === skillSet.length - 1}
+                                className={
+                                    skillSet.length % 2 === 1 &&
+                                    index === skillSet.length - 2
+                                        ? 'md:rounded-br-lg'
+                                        : ''
+                                }
+                            />
+                        </li>
+                    ))}
+                </ul>
+            </Suspense>
+
+            {!expanded && (
+                <Button
+                    onClick={() => {
+                        'use client';
+                        setExpanded(true);
+                    }}
+                >
+                    Show More
+                </Button>
+            )}
         </div>
     );
 }

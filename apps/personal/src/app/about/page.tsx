@@ -6,8 +6,13 @@ import {
     SkillsContainer,
 } from '@repo/ui/containers';
 import Image from 'next/image';
+import { fetchSkills } from '@repo/utils/contentful';
+import SkillContainerClient from '../../components/skill-container';
+import { Suspense } from 'react';
 
-export default function About(): JSX.Element {
+export default async function About(): Promise<JSX.Element> {
+    let skills = await fetchSkills();
+
     return (
         <div className={'space-y-20'}>
             <div className={'space-y-10'}>
@@ -53,7 +58,7 @@ export default function About(): JSX.Element {
                 </div>
             </div>
 
-            <SkillsContainer />
+            <SkillsContainer skills={skills} />
 
             <hr />
 
