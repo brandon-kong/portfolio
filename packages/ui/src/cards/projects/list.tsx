@@ -29,11 +29,11 @@ export default async function Listcard({
                             <H3>{title}</H3>
                         </div>
 
-                        <ul className={'flex flex-col gap-8'}>
+                        <ul className={'flex flex-col gap-10'}>
                             {list.map((item, index) => (
                                 <div
                                     className={
-                                        'flex gap-8 sidebar-shown:flex-row flex-col'
+                                        'flex gap-4 sidebar-shown:flex-row flex-col'
                                     }
                                     key={index}
                                 >
@@ -45,7 +45,7 @@ export default async function Listcard({
                                         <H4>{index + 1}</H4>
                                     </div>
                                     <div
-                                        className={'flex flex-col gap-4 flex-1'}
+                                        className={'flex flex-col gap-2 flex-1'}
                                     >
                                         <H4>{item.title}</H4>
                                         <P

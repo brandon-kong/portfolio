@@ -25,21 +25,27 @@ export default async function About(): Promise<JSX.Element> {
 
                         <div className={'space-y-6'}>
                             <P className={'text-accent-foreground text-lg'}>
-                                I&apos;m Brandon, a software engineer based in
-                                Chicago, IL. I specialize in building robust,
-                                user-friendly, and scalable applications and
-                                software. I have a strong passion for developing
-                                innovative solutions and solving complex
-                                problems.
+                                Hey there! I&apos;m Brandon, a software engineer
+                                who&apos;s proudly based in Chicago. I
+                                specialize in building applications that are not
+                                just robust and scalable, but also user-friendly
+                                enough to make your grandma&apos;s tech support
+                                calls a breeze. With a passion innovative
+                                solutions, I&apos;m always looking for new ways
+                                to make the world a little bit better through
+                                technology.
                             </P>
                             <P className={'text-accent-foreground text-lg'}>
-                                Research assistant at DePaul University, where I
-                                am currently pursuing a Bachelor of Science in
-                                Computer Science. I have spoken at IEEE
-                                conferences and have been actively involved in
-                                research projects. Currently, I am working on a
-                                project that will improve the public
-                                transportation system in Chicago.
+                                By day, I&apos;m a research assistant at DePaul
+                                University, where I&apos;m pursuing a Bachelor
+                                of Science in Computer Science. I&apos;ve had
+                                the thrill of speaking at IEEE conferences,
+                                publishing research papers, and diving into
+                                research projects that keep me on my toes. Right
+                                now, I&apos;m working on a neurobiology project
+                                that aims to use machine learning to analyze
+                                neuroanatomical patterns within gene expression
+                                data.
                             </P>
                         </div>
                     </div>
