@@ -30,7 +30,7 @@ export default async function About(): Promise<JSX.Element> {
                                 specialize in building applications that are not
                                 just robust and scalable, but also user-friendly
                                 enough to make your grandma&apos;s tech support
-                                calls a breeze. With a passion innovative
+                                calls a breeze. With a passion for innovative
                                 solutions, I&apos;m always looking for new ways
                                 to make the world a little bit better through
                                 technology.
