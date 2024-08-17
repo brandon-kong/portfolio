@@ -1,18 +1,27 @@
 import { H2, H3, P } from '@repo/ui/typography';
 import { EmailForm } from '@repo/ui/forms';
 import { ConnectCard } from '@repo/ui/card';
-import { faGithub, faLinkedin } from '@repo/ui/icons';
+import { faGithub, faInstagram, faLinkedin } from '@repo/ui/icons';
+import { ConnectionContainer } from '@repo/ui/containers';
 
 const connections = [
     {
         platform: 'GitHub',
-        username: 'brandonkong',
+        username: 'brandon-kong',
         icon: faGithub,
+        href: 'https://www.github.com/brandon-kong',
     },
     {
         platform: 'LinkedIn',
-        username: 'Brandon Kong',
+        username: 'in/brandondkong',
         icon: faLinkedin,
+        href: 'https://www.linkedin.com/in/brandondkong',
+    },
+    {
+        platform: 'Instagram',
+        username: 'brandondkong',
+        icon: faInstagram,
+        href: 'https://www.instagram.com//brandondkong',
     },
 ];
 
@@ -31,11 +40,7 @@ export default function Contact(): JSX.Element {
 
                 <H3>Let&apos;s connect!</H3>
 
-                <div className={'grid gap-4 md:grid-cols-2'}>
-                    {connections.map((connection, index) => (
-                        <ConnectCard key={index} {...connection} />
-                    ))}
-                </div>
+                <ConnectionContainer />
             </div>
 
             <EmailForm />
