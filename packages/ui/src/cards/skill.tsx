@@ -31,7 +31,7 @@ export default async function SkillCard({
     return (
         <div
             className={cn(
-                'shadow-md h-full w-full flex flex-row items-center justify-center gap-10 bg-accent',
+                'shadow-md  w-full flex flex-row items-center justify-center gap-10 bg-accent',
 
                 isBottomLeft && 'rounded-bl-lg',
                 isBottomRight && 'rounded-br-lg',
