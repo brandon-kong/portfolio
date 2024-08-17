@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import {
     BackgroundProjectCard,
+    ListCard,
     TestimonialCard,
     ToolsCard,
 } from '@repo/ui/project-cards';
@@ -111,7 +112,18 @@ export default async function Project({
             {project.fields.goals && (
                 <React.Fragment>
                     <hr />
-                    <ToolsCard skills={project.fields.tools as any} />
+                    <ListCard list={project.fields.goals as any} />
+                </React.Fragment>
+            )}
+
+            {project.fields.solutions && (
+                <React.Fragment>
+                    <div className={'h-1'}></div>
+
+                    <ListCard
+                        title={'Solutions'}
+                        list={project.fields.solutions as any}
+                    />
                 </React.Fragment>
             )}
 
@@ -131,7 +143,7 @@ export default async function Project({
 
             {project.fields.conclusion && (
                 <React.Fragment>
-                    <hr />
+                    <div className={'h-1'}></div>
                     <BackgroundProjectCard
                         title={'Conclusion'}
                         background={project.fields.conclusion as any}
