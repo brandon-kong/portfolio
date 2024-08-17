@@ -23,7 +23,7 @@ export function Role() {
                 >
                     <H4 className="text-md font-medium">Brandon Kong</H4>
                     <H4 className="mt-0.5 text-sm tracking-[0] font-medium text-accent-foreground">
-                        Full-stack Developer
+                        Full-Stack Developer
                     </H4>
                 </div>
             </div>

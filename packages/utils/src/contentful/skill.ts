@@ -1,7 +1,13 @@
 import { SkillEntrySkeleton, TypeSkill } from '../../types/skill';
 import { cfClient } from './cf-client';
 
-const order = ['Programming Language', 'Tool', 'Database', 'Framework'];
+const order = [
+    'Programming Language',
+    'Software',
+    'Tool',
+    'Database',
+    'Framework',
+];
 
 export const fetchSkills = async (): Promise<TypeSkill[]> => {
     const entries = await cfClient.getEntries<SkillEntrySkeleton>({

@@ -1,3 +1,5 @@
+'use server';
+
 import { BlogPostEntrySkeleton, TypeBlogPost } from '../../types/blog';
 import { cfClient } from './cf-client';
 

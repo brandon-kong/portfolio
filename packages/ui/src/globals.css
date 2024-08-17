@@ -101,3 +101,12 @@
 hr {
     @apply border-divider;
 }
+
+.gradient-overlay {
+    position: relative;
+}
+
+.gradient-overlay::after {
+    @apply bg-gradient-to-b from-transparent via-background-nav via-70% to-background-nav absolute bottom-0 left-0 right-0 pointer-events-none h-16;
+    content: '';
+}
