@@ -143,7 +143,7 @@ export default async function Project({
 
             {project.fields.conclusion && (
                 <React.Fragment>
-                    <div className={'h-1'}></div>
+                    <hr />
                     <BackgroundProjectCard
                         title={'Conclusion'}
                         background={project.fields.conclusion as any}

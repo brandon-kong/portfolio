@@ -35,7 +35,7 @@ export default function ProjectCard({
                         sizes="400px"
                         priority
                         className={
-                            ' w-full h-full absolute group-hover:scale-110 transition-transform duration-500'
+                            ' w-full h-full absolute group-hover:scale-110 transition-transform duration-500 object-cover'
                         }
                     />
                     {}
