@@ -42,7 +42,6 @@ const options = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const fromContentful = await fetchBlogPostWithSlug(params.slug);
-
     if (!fromContentful) {
         notFound();
     }
