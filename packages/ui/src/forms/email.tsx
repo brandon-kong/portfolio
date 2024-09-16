@@ -64,7 +64,12 @@ export default function EmailForm(): React.JSX.Element {
             </div>
             <div className={'space-y-2'}>
                 <Label htmlFor="message">Message</Label>
-                <Textarea required aria-required placeholder="Message" />
+                <Textarea
+                    required
+                    aria-required
+                    placeholder="Message"
+                    name="Message"
+                />
             </div>
 
             {isExploding && (
