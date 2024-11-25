@@ -3,6 +3,7 @@ import ProjectCard from '../cards/project';
 import { H3 } from '../typography';
 import { Button } from '../button';
 import Link from 'next/link';
+import { FadeIn } from '../fade-in';
 
 type ProjectsContainerProps = {
     noTitle?: boolean;
@@ -40,7 +41,9 @@ export default async function ProjectsContainer({
             <ul className={'grid grid-cols-1 sidebar-shown:grid-cols-2 gap-8'}>
                 {projects.map((project, index) => (
                     <li key={index}>
-                        <ProjectCard project={project} />
+                        <FadeIn delay={index * 0.2}>
+                            <ProjectCard project={project} />
+                        </FadeIn>
                     </li>
                 ))}
             </ul>

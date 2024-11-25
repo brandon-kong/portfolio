@@ -16,7 +16,8 @@
     "./blog/components": "./src/blog/mdx-components.tsx",
     "./syntax-highlighter": "./src/syntax-highlighter.css",
     "./forms": "./src/forms/index.ts",
-    "./icons": "./src/icons/index.ts"
+    "./icons": "./src/icons/index.ts",
+    "./fade-in": "./src/fade-in.tsx"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/globals.css ./src/syntax-highlighter.css -o ./dist/globals.css",

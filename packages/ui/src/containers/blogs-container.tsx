@@ -3,6 +3,7 @@ import { H3 } from '../typography';
 import { Button } from '../button';
 import BlogPostCard from '../cards/blogs';
 import Link from 'next/link';
+import { FadeIn } from '../fade-in';
 
 type BlogPostsContainerProps = {
     noTitle?: boolean;
@@ -40,7 +41,9 @@ export default async function BlogPostContainer({
             <ul className={'grid grid-cols-1 gap-8'}>
                 {blogPosts.map((blog, index) => (
                     <li key={index}>
-                        <BlogPostCard blogPost={blog} />
+                        <FadeIn delay={index * 0.2}>
+                            <BlogPostCard blogPost={blog} />
+                        </FadeIn>
                     </li>
                 ))}
             </ul>
