@@ -21,16 +21,16 @@ export default function Contact(): JSX.Element {
 
                 <hr />
 
-                <FadeIn>
+                <FadeIn delay={0.2}>
                     <H3>Let&apos;s connect!</H3>
                 </FadeIn>
 
-                <FadeIn>
+                <FadeIn delay={0.3}>
                     <ConnectionContainer />
                 </FadeIn>
             </div>
 
-            <FadeIn>
+            <FadeIn delay={0.4}>
                 <EmailForm />
             </FadeIn>
         </div>
