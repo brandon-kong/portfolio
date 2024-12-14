@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"],
+      "outputs": [".next/**", "!.next/cache/**", "dist"],
       "env": [
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_FORMSPREE_CONTACT_FORM_ID"
