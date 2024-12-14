@@ -1,3 +1,5 @@
+'use server';
+
 import { TypeBlogPost } from '@repo/utils/types';
 
 export async function getBlogPosts() {
